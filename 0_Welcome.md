@@ -17,17 +17,19 @@ Please fill out the form [here](#). If you cannot open the link, make sure you a
 ### Task 2: Learn some biology
 
 #### The Alignment Problem
-One of the most common bioinformatics problems is alignment. In order to understand why alignment is a problem (or what alignment even is), we need to understand sequencing. You will have plenty of chances to learn the details of sequencing in upcoming lessons, but doen't feel like you need to memorize them today. Instead, we'll focus on the problems that arise from sequencing (since that's where we, as bioinformaticians, step in). 
+One of the most common bioinformatics problems is alignment. In order to understand why alignment is a problem (or what alignment even is), we need to understand sequencing. 
+
+You will have plenty of chances to learn the details of sequencing in upcoming lessons, so doen't feel like you need to memorize them today. Instead, we'll focus on the problems that arise from sequencing (since that's where we, as bioinformaticians, step in). 
 
 **Sanger Sequencing** 
 
-This one is widely taught and known, but a little outdated. 
+This one is widely taught and known, but a bit outdated in practice. 
 
-**1.** Lyse the cells and extract DNA. The DNA itself is fragmented and copied many many times over. 
+**1.** Lyse the cells and extract DNA. The DNA is fragmented and copied many many times over. 
 
 **2.** Attach primers to the fragments and separate the experiment into 4 tubes. 
 
-**3.** Each tube receives plenty DNA polymerase, plenty deoxynucleosidetriphosphates (dNTPs) and about 1/100th the amount of di-deoxynucleotidetriphosphates (ddNTPs). The issue with ddNTPs is that they don't have the 3'-OH group. Synthesis stops when it a ddNTP is attached, which happens at various points on various fragments. 
+**3.** Each tube receives plenty DNA polymerase, plenty deoxynucleosidetriphosphates (dNTPs) and about 1/100th the amount of di-deoxynucleotidetriphosphates (ddNTPs). ddNTPs don't have the 3'-OH group, which means they cannot be extended. Synthesis stops when it a ddNTP is attached, which happens at various points on various fragments. 
 
 **4.** DNA is negatively charged. Heat the DNA to separate it and put through a gel from pos->neg side, which separates fragments with a resolution of 1 nucleotide. 
 
