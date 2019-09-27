@@ -4,21 +4,20 @@
 
 ## The Big Picture
 
-This course is designed for people with little to no programming experience and little to no Bioinformatics experience. We want to give Bioinformatics novices the confidence, skills, and resources needed to apply to labs & internships, and to give non-Bioinformaticians a handle on how the field works.
+This course is designed for people with little to no programming experience and little to no bioinformatics experience. We want to give bioinformaticians the confidence, skills, and resources needed to apply to labs & internships, and to give non-bioinformaticians a handle on how the field works.
 
 ## Getting a Computer Set Up
 
 ### Task 1: Make Accounts
 
-In order to make sure everyone is on the same page at all times, we are going to have everyone use the same computer: a giant computer in the sky, EC2. Let's get you connected to our computer. 
+In order to make sure everyone is on the same page at all times, we are going to have everyone use the same computer: a giant computer in the sky, **EC2**. Let's get you connected to our computer. 
 
 Please fill out the form [here](#). If you cannot open the link, make sure you are logged into your UCSD email account. We will create an EC2 account for you to use for this course - your username will be your UCSD username. 
 
 ### Task 2: Learn some biology
 
 #### The Alignment Problem
-
-There are several very common and difficult problems in bioinformatics worth knowing, one of which is the problem of alignment. In order to understand why alignment is a problem, we need to understand sequencing. You will have plenty of chances to memorize the steps of sequencing, and this is supposed to be about bioinformatics, so don't feel like you need to memorize them. I'll try to focus your attention on the problems that arise from sequencing (since that is where we, as bioinformaticists, step in). 
+One of the most common bioinformatics problems is alignment. In order to understand why alignment is a problem (or what alignment even is), we need to understand sequencing. You will have plenty of chances to learn the details of sequencing in upcoming lessons, but doen't feel like you need to memorize them today. Instead, we'll focus on the problems that arise from sequencing (since that's where we, as bioinformaticians, step in). 
 
 **Sanger Sequencing** 
 
