@@ -10,7 +10,7 @@ As you progress through bioinformatics, you might find yourself developing techn
 
 *Note: In this course, we try to avoid lecture-based material. However, in this first lesson, we want to set a foundation of major problems bioinformaticians work on. We'll keep it short, and move on to the interactive part: working in a Linux environment!*
 
-### I. The Alignment Problem ([full lesson](https://github.com/sabeelmansuri/Bioinformatics-Crash-Course/blob/master/5_Alignment.md)) 
+### I. The Alignment Problem ([full lesson](https://github.com/sabeelmansuri/Bioinformatics-Crash-Course/blob/master/5_Alignment.md))
 
 The first problem we'll look at is alignment. **Alignment is the process of arranging sequences in a way to identify regions of similarity that may be a consequence of functional, structural, or evolutionary relationships between the sequences.** In order to understand why alignment is hard and practical problem, we will start by learning a bit about sequencing DNA. 
 
