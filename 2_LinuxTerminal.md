@@ -1,5 +1,71 @@
 # The Linux Terminal 
 
+***Why Linux?*** The majority of servers run on Linux, a free operating system which inherited its predecessor's (GNU's) mission to give users freedom. Linux is completely open source, allowing users to see and modify any part of its inner workings. Linux is also extremely stable, allowing servers to be up for years at a time without restarting.
+
+### Preparing for ssh
+
+Bioinformatics is often space and computation intensive, so we outsource our computational work to a bigger computer called a server.
+ 
+
+***Secure Shell(ssh):*** a protocol which creates a secure channel for two computers to communicate even over an unsecured network. This is how we will connect to EC2. 
+
+**Windows:** We do not like Windows terminals, you do not like Windows terminals, no one likes Windows terminals. Go to [The Putty website](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) and download Putty. A GUI should appear to guide you through the installation.
+
+**Mac or Linux:** You're good to go! No preparation necessary--you've already got a built-in ssh client.
+
+
+
+## Task 3: Explore your EC2
+
+In your email, you should have a password from me. Your username for EC2 is the same as your ucsd username.
+
+**Windows:** Open putty, paste ```ec2-13-59-255-161.us-east-2.compute.amazonaws.com``` into the Host Name section and select port 22 and SSH on that same page. Type a name under Saved Sessions and click the Save icon on the right. Now, press Open and type your username and password when prompted. 
+
+**Mac or Linux:** Right click anywhere and click open terminal. You should see a prompt that looks something like  ```mchernys@mchernys-ThinkPad-T430:~/Desktop$```. Next, copy paste this command into the terminal and press enter ```ssh your-username@ec2-13-59-255-161.us-east-2.compute.amazonaws.com```. Note: use Ctrl-shift-V to paste into terminal. Please replace "your-username" with your actual username. Save the command you used somewhere so you can copy paste it in the future. 
+
+You probably have your own password in mind for your account. Type ```passwd username``` and follow the prompts to set your own password. 
+
+Discover your identity. Type `whoami` into the window that just opened up and hit `enter`. And just like that you're talking
+with your computer, you bioinformatician, you.
+
+## How do I see what a command does?
+
+Anytime you need a refresh on what a command does, type the command line with the --help option like so: ```ls --help```. If that does not work, try ```man ls```. I will go over why different commands have different help syntax in a bit. 
+
+## Navigation, manipulation, and permission
+
+In order to get started, we need to be able to do the same thing we do in a file explorer in the command line. You may find it inconvenient at first, but with time these commands become faster and more versatile than the file explorer's interface. 
+
+The forward slashes in a terminal console represent directories, with the home directory being a ```~```. Your default folder on EC2 is your use folder, which is ```~/username```. This means the folder named after your username is a subfolder of the home folder, which is represented by ```~```. 
+
+```cd```(change directory) Type cd followed by the directory's path to navigate a terminal to that directory. ```.``` is current directory and ```..``` is the parent of the current directory. 
+
+```ls```(list files) prints out the contents of a directory. There are tons of options for this command - my favorite is ```ls -lah``` , since it prints the directory contents in list format(```-l```), includes hidden files/folders(```-a```), and makes the storage sizes more readable for humans(```-h```). 
+
+
+```mkdir```(make directory) Creates a directory with the same name as the argument you give it. 
+
+---
+
+### TODO: Make a Software Folder
+
+Navigate your terminal to your home directory(the directory named after your UCSD username) using ```cd```. Type ```mkdir software``` and press enter. Type ```ls``` to see the changes you have made. The reason for a software folder is to keep your software in it, oddly enough. Usually, you would place executables in the /bin system folder, but you are not the admin so you cannot access that folder :( . This is often the case when you ssh into a system, so get used to having a dedicated software folder.  
+
+---
+
+3 tasks:
+
+1. Print all of the contents of the downloaded dataset to terminal window ("standard output")
+2. Print how many lines there are in the file
+3. Print how many lines there are in the file **THAT CONTAIN GENETIC DATA** (no headers)
+
+
+
+
+
+
+
+
 #### Skill: UNIX/Command Line + RNA-seq quantification
 
 The previous doc we went over included some information on alignment. This lesson will teach command line skills which will allow us to use alignment software. There are an endless number of commands, each with a ridiculous amount of options, so **do NOT attempt to memorize on the first try**. Use the commands listed below as a reference to look at. Actually learning (or memorizing) the commands comes from repeated use of the terminal. Same goes for the tool installation process we will go through. This course is supposed to be all about these tools, so we will have much more practice with handling them. Think of this as an introduction, a reference sheet, and generalized example.
