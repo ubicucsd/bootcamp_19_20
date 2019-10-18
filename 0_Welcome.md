@@ -1,26 +1,26 @@
 # Hello World: What's the purpose of bioinformatics?
 
-## Welcome to the Crash Course!
+### Welcome to the Crash Course!
 
-These activities are designed for students with zero to some programming experience and zero to some bioinformatics experience.  The crash course is always in development, so we ask for everyone to be patient and tell us when we are screwing up. Thanks! 
+These activities are designed for students with zero to some programming experience and zero to some bioinformatics experience.  The crash course is always in development, so we ask for everyone to be patient and tell us when we are screwing up. Thanks!
 
-# Big Bioinformatics Problems
+## Big Bioinformatics Problems
 
-As you progress through bioinformatics, you might find yourself developing technical skills without knowing what problems to tackle. Therefore, this lesson will introduce you to of some of the things we, as bioinformaticians, do. 
+As you progress through bioinformatics, you might find yourself developing technical skills without knowing what problems to tackle. In fact, there are several common and difficult problems in bioinformatics worth knowing. Therefore, this lesson will introduce you to of some of the things we, as bioinformaticians, do. 
 
 *Note: In this course, we try to avoid lecture-based material. However, in this first lesson, we want to set a foundation of major problems bioinformaticians work on. We'll keep it short, and move on to the interactive part: working in a Linux environment!*
 
-## The Alignment Problem ([full lesson](https://github.com/sabeelmansuri/Bioinformatics-Crash-Course/blob/master/5_Alignment.md))
+### I. The Alignment Problem ([full lesson](https://github.com/sabeelmansuri/Bioinformatics-Crash-Course/blob/master/5_Alignment.md))
 
-There are several very common and difficult problems in bioinformatics worth knowing, one of which is the problem of alignment. **Alignment is the process of arranging sequences in a way to identify regions of similarity that may be a consequence of functional, structural, or evolutionary relationships between the sequences.** In order to understand why alignment is hard and practical problem, we will start by learning a bit about sequencing. 
+The first problem we'll look at is alignment. **Alignment is the process of arranging sequences in a way to identify regions of similarity that may be a consequence of functional, structural, or evolutionary relationships between the sequences.** In order to understand why alignment is hard and practical problem, we will start by learning a bit about sequencing DNA. 
 
 **Illumina Sequencing:** 
 
-This is the most widely used "golden standard" method of today. The main idea is that DNA is fragmented into pieces, attached to a flow cell, copied many times over by PCR, and the complement strand is determined one nucleotide at a time. The modified nucleic acids Illumina uses during the generation of complementary strands emit light when they are bound. Illumina sequencing adds one base, measures the color output of the flow cell, adds a different base, measures the color output and repeats over and over. Here is a nice graphic depicting the process:
+This is the most widely used "golden standard" method of sequencing DNA. The main idea is that DNA is fragmented into pieces, attached to a flow cell, copied many times over by PCR, and the complement strand is determined one nucleotide at a time. The modified nucleic acids Illumina uses during the generation of complementary strands emit light when they are bound. Illumina sequencing adds one base, measures the color output of the flow cell, adds a different base, measures the color output and repeats over and over. Here is a nice graphic depicting the process:
 
 ![graphic explaining illumina](http://www.3402bioinformaticsgroup.com/wp-content/uploads/2016/07/NGS.png)
 
-There is also a video explaining Illumina sequencing which you will watch in every single Bioinformatics class you take in the future, found [here](https://www.youtube.com/watch?v=fCd6B5HRaZ8). 
+There is also a video explaining Illumina sequencing which you will watch in *every single Bioinformatics class* you take in the future, found [here](https://www.youtube.com/watch?v=fCd6B5HRaZ8). 
 
 Want to learn more about different sequencing methods? We have a document describing non Illumina methods in more detail [over here](https://github.com/sabeelmansuri/Bioinformatics-Crash-Course/blob/master/extra_sequencing.md)
 
@@ -39,11 +39,11 @@ Besides helping us reconstruct the DNA put into a sequencer, alignment can also
 
 TLDR: There are numerous complex applications of bioinformatics algorithms, from functional structure predictions to ancestral reconstructions. Alignment serves as the foundation for many of these algorithms, making basic sense of the incomprehensible mass of DNA that sequencing gives us. 
 
-## The Clustering Problem ([full lesson](https://github.com/sabeelmansuri/Bioinformatics-Crash-Course/blob/master/6.%20Clustering.md))
+### II. The Clustering Problem ([full lesson](https://github.com/sabeelmansuri/Bioinformatics-Crash-Course/blob/master/6.%20Clustering.md))
 
 **Clustering is the the process of assigning data points to groups in such a way that the elements in a group/cluster are more similar to each other than they are to those in other groups.** The definition of what it means to be similar can vary and is determined by the function we use to measure distance between two points. 
 
-### Some types of clustering:
+#### Some types of clustering:
 - Hierarchical Clustering: Repeatedly combines the closest points into a cluster that is the hybrid location of both points. The reason this is interesting to us is that it forms a tree of clusters, which can represent a tree of related genes which can be used to infer homology.
 
 ![hierarchical cluster](https://upload.wikimedia.org/wikipedia/commons/a/ad/Hierarchical_clustering_simple_diagram.svg)
@@ -51,6 +51,8 @@ TLDR: There are numerous complex applications of bioinformatics algorithms, from
 - K-means Clustering: Separates a dataset into k groups of points in such a way that the members of a cluster are as close as possible to the center of the cluster they belong to. This type of clustering can check that the datapoints we are observing cluster together by tissue type, experimental conditions, time points, etc. 
 
 - Fuzzy Clustering: Datapoints are not definitively assigned to a specific cluster, rather they are given a likelihood of belonging to a cluster. This can be used to ascertain levels of co expression between genes, revealing genes which may be under common regulatory control. 
+
+## The Linux Terminal
 
 ## Getting Set Up for ssh
 
