@@ -22,7 +22,7 @@ This is the most widely used "golden standard" method of sequencing DNA. The mai
 
 There is also a video explaining Illumina sequencing which you'll watch in *every single Bioinformatics class* you take in the future, found [here](https://www.youtube.com/watch?v=fCd6B5HRaZ8). 
 
-Want to learn more about different sequencing methods? We have a document describing non-Illumina methods in more detail [over here](/1.1_Extra_Sequencing.md)
+Want to learn more about different sequencing methods? We have a document describing non-Illumina methods in more detail [over here](/extras/1.1_Extra_Sequencing.md)
 
 ***Comparing Sequencing Methods and Why they Matter***
 
