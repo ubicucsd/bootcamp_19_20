@@ -66,10 +66,11 @@ Navigate your terminal to your home directory(the directory named after your UCS
 3. Print how many lines there are in the file **THAT CONTAIN GENETIC DATA** (no headers)
 
 
+### Once you get to this stage, show your answers to an instructor to get checked off. Congratulations! You've completed the first lesson of the Bioinformatics Crash Course!
 
 
 
-#### Skill: UNIX/Command Line + RNA-seq quantification
+# Do NOT Continue!
 
 The previous doc we went over included some information on alignment. This lesson will teach command line skills which will allow us to use alignment software. There are an endless number of commands, each with a ridiculous amount of options, so **do NOT attempt to memorize on the first try**. Use the commands listed below as a reference to look at. Actually learning (or memorizing) the commands comes from repeated use of the terminal. Same goes for the tool installation process we will go through. This course is supposed to be all about these tools, so we will have much more practice with handling them. Think of this as an introduction, a reference sheet, and generalized example.
 
