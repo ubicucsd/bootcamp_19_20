@@ -1,12 +1,14 @@
-# Hello World
+# Hello World: What's the purpose of bioinformatics?
 
-## The Big Picture
+## Welcome to the Crash Course!
 
-These activities are designed for people with zero to some programming experience and zero to some Bioinformatics experience. We will look at some of the things bioinformaticians do for a living, then do some tasks with a Linux terminal. The crash course is always in development, so we ask for everyone to be patient and tell us when we are screwing up. Thanks! 
+These activities are designed for students with zero to some programming experience and zero to some bioinformatics experience.  The crash course is always in development, so we ask for everyone to be patient and tell us when we are screwing up. Thanks! 
 
-# The Big Problems - What is the Purpoes of Bioinformatics?
+# Big Bioinformatics Problems
 
-When I first started taking classes for my major, I had no idea what I was supposed to solve with the skills I learned. Thus, the first crash course will include descriptions of some of the things we do. I know lecture style learning is not great, but personally I would have liked to learn about the major problems Bioinformaticians work on so I could feel some sense of purpoes. I will try to make the lecture quick!
+As you progress through bioinformatics, you might find yourself developing technical skills without knowing what problems to tackle. Therefore, this lesson will introduce you to of some of the things we, as bioinformaticians, do. 
+
+*Note: In this course, we try to avoid lecture-based material. However, in this first lesson, we want to set a foundation of major problems bioinformaticians work on. We'll keep it short, and move on to the interactive part: working in a Linux environment!*
 
 ## The Alignment Problem ([full lesson](https://github.com/sabeelmansuri/Bioinformatics-Crash-Course/blob/master/5_Alignment.md))
 
