@@ -31,11 +31,15 @@ with your computer, you bioinformatician, you.
 
 2. The password we provided you with isn't particularly safe. Let's change your password using the terminal. Type ```passwd [your-username]``` and follow the prompts to set your own password. (Replace "your-username" with your username.)
 
-## How do I see what a command does?
+### So... Commands?
 
-Anytime you need a refresh on what a command does, type the command line with the --help option like so: ```ls --help```. If that does not work, try ```man ls```. I will go over why different commands have different help syntax in a bit. 
+Commands are things you can type into the terminal to perform different actions. There are an endless number of commands, each with a ridiculous amount of options, so **do NOT attempt to memorize them on the first try**. 
 
-## Navigation, manipulation, and permission
+How do you know what command to use to do sometihng you want? Simple: for now, we'll explain commands as you need them. Actually learning (or memorizing) the commands will come naturally from repeated use of the terminal.
+
+*Note: Anytime you need a refresher on what a command does, type the command line with the --help option like so: ```ls --help```. If that does not work, try ```man ls```. One (or both) of these will pull up information on how to use the command.*
+
+### What Am I looking At? What Can I Do?
 
 In order to get started, we need to be able to do the same thing we do in a file explorer in the command line. You may find it inconvenient at first, but with time these commands become faster and more versatile than the file explorer's interface. 
 
@@ -45,25 +49,21 @@ The forward slashes in a terminal console represent directories, with the home d
 
 ```ls```(list files) prints out the contents of a directory. There are tons of options for this command - my favorite is ```ls -lah``` , since it prints the directory contents in list format(```-l```), includes hidden files/folders(```-a```), and makes the storage sizes more readable for humans(```-h```). 
 
-
 ```mkdir```(make directory) Creates a directory with the same name as the argument you give it. 
 
----
 
-### TODO: Make a Software Folder
+### [Your Turn!] Make a Software Folder
+
 
 Navigate your terminal to your home directory(the directory named after your UCSD username) using ```cd```. Type ```mkdir software``` and press enter. Type ```ls``` to see the changes you have made. The reason for a software folder is to keep your software in it, oddly enough. Usually, you would place executables in the /bin system folder, but you are not the admin so you cannot access that folder :( . This is often the case when you ssh into a system, so get used to having a dedicated software folder.  
 
----
+### [Your Turn!] Investigate Genetic Data
 
 3 tasks:
 
 1. Print all of the contents of the downloaded dataset to terminal window ("standard output")
 2. Print how many lines there are in the file
 3. Print how many lines there are in the file **THAT CONTAIN GENETIC DATA** (no headers)
-
-
-
 
 
 
