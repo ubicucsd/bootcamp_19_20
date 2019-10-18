@@ -1,10 +1,10 @@
-# The Linux Terminal 
+# The Linux Terminal
 
 Bioinformatics is often memory and computation intensive, so we'll be outsourcing our computational work to a bigger computer called a server. This server will run on the Linux operating system. (This is no different than your laptop running on a Windows or Mac operating system.)
 
 ***Why Linux?*** The majority of servers run on Linux, a free operating system which inherited its predecessor's (GNU's) mission to give users freedom. Linux is completely open source, allowing users to see and modify any part of its inner workings. Linux is also extremely stable, allowing servers to be up for years at a time without restarting.
 
-### How Can I Connect?
+## How Can I Connect?
 
 ***Secure Shell(ssh)*** is a protocol which creates a secure channel for two computers to communicate. This is how we will connect to our server.
 
@@ -12,18 +12,24 @@ Bioinformatics is often memory and computation intensive, so we'll be outsourcin
 
 **Windows users:** We do not like Windows terminals, you do not like Windows terminals, no one likes Windows terminals. Go to [The Putty website](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) and download Putty. A window should appear to guide you through the installation.
 
-## Task 3: Explore the Server
+## Exploring the Server
 
-In your email, you should have a password from me. Your username for EC2 is the same as your ucsd username.
+We've created an account for you on our server (which is, by the way, called EC2). Your username for EC2 is the same as your UCSD username. Your password has been emailed to you.
 
-**Windows:** Open putty, paste ```ec2-13-59-255-161.us-east-2.compute.amazonaws.com``` into the Host Name section and select port 22 and SSH on that same page. Type a name under Saved Sessions and click the Save icon on the right. Now, press Open and type your username and password when prompted. 
+### Connecting
 
-**Mac or Linux:** Right click anywhere and click open terminal. You should see a prompt that looks something like  ```mchernys@mchernys-ThinkPad-T430:~/Desktop$```. Next, copy paste this command into the terminal and press enter ```ssh your-username@ec2-13-59-255-161.us-east-2.compute.amazonaws.com```. Note: use Ctrl-shift-V to paste into terminal. Please replace "your-username" with your actual username. Save the command you used somewhere so you can copy paste it in the future. 
+**Mac or Linux:** Open an application on your device called "Terminal". This should open up a window that prompts you to enter some text. Copy-paste this command into the terminal: ```ssh your-username@ec2-3-16-81-18.us-east-2.compute.amazonaws.com```. Replace "your-username" with your UCSD username, and press enter. You're now connected to EC2!
 
-You probably have your own password in mind for your account. Type ```passwd username``` and follow the prompts to set your own password. 
+*Note: you may need to use Ctrl-shift-V to paste into terminal.*
 
-Discover your identity. Type `whoami` into the window that just opened up and hit `enter`. And just like that you're talking
+**Windows:** Open putty, paste ```ec2-3-16-81-18.us-east-2.compute.amazonaws.com``` into the Host Name section and select port 22 and SSH on that same page. Type any name of your choice under Saved Sessions and click the Save icon on the right. Now, press Open and type your username and password when prompted. 
+
+### Your First Commands
+
+1. Discover your identity. Type `whoami` into the window that just opened up and hit `enter`. And just like that you're talking
 with your computer, you bioinformatician, you.
+
+2. The password we provided you with isn't particularly safe. Let's change your password using the terminal. Type ```passwd [your-username]``` and follow the prompts to set your own password. (Replace "your-username" with your username.)
 
 ## How do I see what a command does?
 
