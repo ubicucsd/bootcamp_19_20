@@ -82,4 +82,4 @@ Here's another cool tool: Blast will quickly look up a sequence in the NCBI data
 
 ## The Linux Terminal
 
-Click [here](/1_LinuxTerminal.md) to move on to the next part of the lesson.
+Click [here](/2_LinuxTerminal.md) to move on to the next part of the lesson.
