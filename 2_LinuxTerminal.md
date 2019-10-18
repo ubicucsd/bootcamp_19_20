@@ -1,21 +1,18 @@
 # The Linux Terminal 
 
+Bioinformatics is often memory and computation intensive, so we'll be outsourcing our computational work to a bigger computer called a server. This server will run on the Linux operating system. (This is no different than your laptop running on a Windows or Mac operating system.)
+
 ***Why Linux?*** The majority of servers run on Linux, a free operating system which inherited its predecessor's (GNU's) mission to give users freedom. Linux is completely open source, allowing users to see and modify any part of its inner workings. Linux is also extremely stable, allowing servers to be up for years at a time without restarting.
 
-### Preparing for ssh
+### How Can I Connect?
 
-Bioinformatics is often space and computation intensive, so we outsource our computational work to a bigger computer called a server.
- 
+***Secure Shell(ssh)*** is a protocol which creates a secure channel for two computers to communicate. This is how we will connect to our server.
 
-***Secure Shell(ssh):*** a protocol which creates a secure channel for two computers to communicate even over an unsecured network. This is how we will connect to EC2. 
+**Mac or Linux users:** skip to **Exploring the Server**. Your device has a built-in ssh client!
 
-**Windows:** We do not like Windows terminals, you do not like Windows terminals, no one likes Windows terminals. Go to [The Putty website](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) and download Putty. A GUI should appear to guide you through the installation.
+**Windows users:** We do not like Windows terminals, you do not like Windows terminals, no one likes Windows terminals. Go to [The Putty website](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) and download Putty. A window should appear to guide you through the installation.
 
-**Mac or Linux:** You're good to go! No preparation necessary--you've already got a built-in ssh client.
-
-
-
-## Task 3: Explore your EC2
+## Task 3: Explore the Server
 
 In your email, you should have a password from me. Your username for EC2 is the same as your ucsd username.
 
