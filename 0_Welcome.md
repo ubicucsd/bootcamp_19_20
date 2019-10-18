@@ -1,115 +1,71 @@
 # Hello World
 
-#### Skills: General Bioinformatics Paradigms
-
 ## The Big Picture
 
-This course is designed for people with little to no programming experience and little to no bioinformatics experience. We want to give bioinformaticians the confidence, skills, and resources needed to apply to labs & internships, and to give non-bioinformaticians a handle on how the field works.
+These activities are designed for people with zero to some programming experience and zero to some Bioinformatics experience. We will look at some of the things bioinformaticians do for a living, then do some tasks with a Linux terminal. The crash course is always in development, so we ask for everyone to be patient and tell us when we are screwing up. Thanks! 
 
-## Getting a Computer Set Up
+# The Big Problems - What is the Purpoes of Bioinformatics?
 
-### Task 1: Make Accounts
+When I first started taking classes for my major, I had no idea what I was supposed to solve with the skills I learned. Thus, the first crash course will include descriptions of some of the things we do. I know lecture style learning is not great, but personally I would have liked to learn about the major problems Bioinformaticians work on so I could feel some sense of purpoes. I will try to make the lecture quick!
 
-In order to make sure everyone is on the same page at all times, we are going to have everyone use the same computer: a giant computer in the sky, **EC2**. Let's get you connected to our computer. 
+## The Alignment Problem ([full lesson](https://github.com/sabeelmansuri/Bioinformatics-Crash-Course/blob/master/5_Alignment.md))
 
-Please fill out the form [here](#). If you cannot open the link, make sure you are logged into your UCSD email account. We will create an EC2 account for you to use for this course - your username will be your UCSD username. 
-
-### Task 2: Learn some biology
-
-#### The Alignment Problem
-One of the most common bioinformatics problems is alignment. In order to understand why alignment is a problem (or what alignment even is), we need to understand sequencing. 
-
-You will have plenty of chances to learn the details of sequencing in upcoming lessons, so doen't feel like you need to memorize them today. Instead, we'll focus on the problems that arise from sequencing (since that's where we, as bioinformaticians, step in). 
-
-**Sanger Sequencing** 
-
-This one is widely taught and known, but a bit outdated in practice. 
-
-**1.** Lyse the cells and extract DNA. The DNA is fragmented and copied many many times over. 
-
-**2.** Attach primers to the fragments and separate the experiment into 4 tubes. 
-
-**3.** Each tube receives plenty DNA polymerase, plenty deoxynucleosidetriphosphates (dNTPs) and about 1/100th the amount of di-deoxynucleotidetriphosphates (ddNTPs). ddNTPs don't have the 3'-OH group, which means they cannot be extended. Synthesis stops when it a ddNTP is attached, which happens at various points on various fragments. 
-
-**4.** DNA is negatively charged. Heat the DNA to separate it and put through a gel from pos->neg side, which separates fragments with a resolution of 1 nucleotide. 
-
-**5.** The trick is that the ddNTPs are fluorescent! You now have many many fragments whose lengths you know down to the nucleotide. Expose an x-ray film to the gel, and now you have 4 rows representing the 4 nucleotides and dark bands where each of the 4 nucleotides terminated a fragment. Here's a picture to clarify: 
-
-![image of sanger gel](https://upload.wikimedia.org/wikipedia/commons/c/cb/Sequencing.jpg)
+There are several very common and difficult problems in bioinformatics worth knowing, one of which is the problem of alignment. **Alignment is the process of arranging sequences in a way to identify regions of similarity that may be a consequence of functional, structural, or evolutionary relationships between the sequences.** In order to understand why alignment is hard and practical problem, we will start by learning a bit about sequencing. 
 
 **Illumina Sequencing:** 
 
-The most widely used method. This one is a bit harder to explain, so I recommend clicking [here](https://www.youtube.com/watch?v=fCd6B5HRaZ8) to watch a concise video on this topic. 
+This is the most widely used "golden standard" method of today. The main idea is that DNA is fragmented into pieces, attached to a flow cell, copied many times over by PCR, and the complement strand is determined one nucleotide at a time. The modified nucleic acids Illumina uses during the generation of complementary strands emit light when they are bound. Illumina sequencing adds one base, measures the color output of the flow cell, adds a different base, measures the color output and repeats over and over. Here is a nice graphic depicting the process:
 
 ![graphic explaining illumina](http://www.3402bioinformaticsgroup.com/wp-content/uploads/2016/07/NGS.png)
 
-**PacBio Sequencing:** 
+There is also a video explaining Illumina sequencing which you will watch in every single Bioinformatics class you take in the future, found [here](https://www.youtube.com/watch?v=fCd6B5HRaZ8). 
 
-**1.** DNA is immobilized at the bottom of a small well with a DNA polymerase. 
+Want to learn more about different sequencing methods? We have a document describing non Illumina methods in more detail [over here](https://github.com/sabeelmansuri/Bioinformatics-Crash-Course/blob/master/extra_sequencing.md)
 
-**2.** Fluorescent nucleotides are introduced to into the well, each labeled with a unique fluorophore.
+***Comparing Sequencing Methods and Why they Matter***
 
-**3.** Light from the bottom of the well makes the bases fluoresce as they are added to the DNA template by the polymerase and the sequence of light colors is recorded.
-
-***So, what does it matter?***
-
-What do Sanger and Illumina sequencing have in common? Both produce ridiculous quantities of small DNA fragments. Illumina produces  300 million to 4 billion reads per run, with a selection of read lengths ranging from 50 base pairs to 300 base pairs. Meanwhile, Sanger produces 50000 sequences at lengths varying from 800 to 1000 base pairs. To give some perspective, the typical animal of interest is a human and those have 3.0×10^9 base pairs. Individual human genes range from 1148 to 37.7 kb (average length = 8446 bp,s.d. = 7124). 
+What do all sequencing method have in common(yes, even PacBio)?  All produce ridiculous quantities of small DNA sequences. Illumina produces  300 million to 4 billion reads per run, with a selection of read lengths ranging from 50 base pairs to 300 base pairs. Meanwhile, Sanger produces 50000 sequences at lengths varying from 800 to 1000 base pairs. To give some perspective, the typical animal of interest is a human and those have 3.0×10^9 base pairs. Individual human genes range from 1148 to 37.7 kb (average length = 8446 bp,s.d. = 7124). 
 
 These tiny reads overlap all over the place. If you imagine the true sequence these reads came from and place the reads where they came from, you will get many reads piled up over every base pair in the true sequence. The more reads pile up, the more accurately you can predict the actual sequence. A common measure that rates the robustness of an alignment is coverage:
 
 ![coverage](https://slideplayer.com/slide/5083621/16/images/4/Definition+of+Coverage.jpg)
 
-Alignment allows us to find how two or two thousand sequences line up, allowing us to identify single mutations, reduce error rates, build original(de novo) sequences, and analyze homology to build evolutionary trees. 
-
-***Some problems to keep in mind for later***
-
-Each sequencing platform has its strengths and weaknesses that we will have to account for later.
-
-**Sanger**
-
-|Pros |Cons|
-|---|---|   
-|- High precision - error rates of ~.001% |- low throughput   |
-|- long read length  |- expensive  |
-
-Sanger sequencing is currently only really for small sequence lengths in a small number of samples.
-
-**Illumina**
-
-|Pros |Cons|
-|---|---|   
-|- low cost  |- short reads   |
-|- high throughput   |- not cost effective for small number of targets|
-|- decent precision - error rate: 0.46% - 2.4% |   |
-
-Although the reads are short and the error rate is not as low as Sanger sequencing, Illumina sequencing produces so many sequences that it doesn't matter. Getting the most out of Illumina means getting the most out of its high throughput and per base coverage, which requires the proper software. 
-
-**PacBio**
-
-|Pros |Cons|
-|---|---|   
-|- long reads - up to 15kpb |- expensive |
-|- high throughput| - high error rate |
-
-Longer reads means that fewer reads are needed for the same coverage. Clearly, PacBio is best used for the reconstruction of longer genes or entire genomes. 
-
-Different tricks are available for different situations (Needleman-Wunsch for pairwise alignment or Burrows-Wheeler transform for aligning many reads to a single template), but we will be focusing mostly on how to use the tools rather than the algorithms within them. 
+Besides helping us reconstruct the DNA put into a sequencer, alignment can also
+- Determine which organism an unkown sequence comes from
+- Pinpoint locations where mutations have occured relative to a reference sequence
+- Help determine the evolutionary distance between sequences
 
 TLDR: There are numerous complex applications of bioinformatics algorithms, from functional structure predictions to ancestral reconstructions. Alignment serves as the foundation for many of these algorithms, making basic sense of the incomprehensible mass of DNA that sequencing gives us. 
 
-### The Clustering Problem 
+## The Clustering Problem ([full lesson](https://github.com/sabeelmansuri/Bioinformatics-Crash-Course/blob/master/6.%20Clustering.md))
 
-The general idea behind clustering is the grouping of many elements so that the elements in a cluster are more similar to each other than they are to those in other groups. 
+**Clustering is the the process of assigning data points to groups in such a way that the elements in a group/cluster are more similar to each other than they are to those in other groups.** The definition of what it means to be similar can vary and is determined by the function we use to measure distance between two points. 
 
-**Hierarchical Clustering:** 
-
-Based on a system where elements that are closer together are more similar than those that are further apart. In this approach, elements which are close together will be combined into a cluster that is the hybrid location of both elements. So if we have an element a (0, 4) and another at (0, 2), the cluster is at (0, 3). The reason this is interesting to us is that it forms a tree of clusters, which can represent a tree of related genes which can be used to infer homology. Another example application is the finding of true sequences. Imagine you have a sequencing experiment that amplifies genes from an HIV sample, but you do not know how many successful mutations of HIV you have in the sample(infected people usually carry multiple versions because of how fast it mutates). After cleaning these sequences, clustering them together can reveal closely related groups. With the proper distance tweaking and statistical tricks, you can separate each real version of the virus into a cluster, revealing the prevalent mutations in the patient.
+### Some types of clustering:
+- Hierarchical Clustering: Repeatedly combines the closest points into a cluster that is the hybrid location of both points. The reason this is interesting to us is that it forms a tree of clusters, which can represent a tree of related genes which can be used to infer homology.
 
 ![hierarchical cluster](https://upload.wikimedia.org/wikipedia/commons/a/ad/Hierarchical_clustering_simple_diagram.svg)
 
-*Side Note:* As you will soon learn in your CSE classes, implementation is important and the state of the art alignment and clustering programs do their job quickly and accurately because they attempt to do the minimum amount of work possible. Fast alignment programs like mafft use fancy tricks like Fourier tranforms and fast clustering algorithms often use simpler tricks like transforming into kmer representation. Bioinformatics has lots of data, so you should never attempt to solve a problem by going through all possible combinations or even the majority of all possible combinations. To give the classic stupid example, 80 sequences of length 1000 technically have over 1000^80 possible alignments which is a bit off from the 10^80 atoms in our universe. 
+- K-means Clustering: Separates a dataset into k groups of points in such a way that the members of a cluster are as close as possible to the center of the cluster they belong to. This type of clustering can check that the datapoints we are observing cluster together by tissue type, experimental conditions, time points, etc. 
 
-## Task 3: Aliview
+- Fuzzy Clustering: Datapoints are not definitively assigned to a specific cluster, rather they are given a likelihood of belonging to a cluster. This can be used to ascertain levels of co expression between genes, revealing genes which may be under common regulatory control. 
+
+## Getting Set Up for ssh
+
+Bioinformatics is often space and computation intensive, so we outsource our computational work to a bigger computer called a server.
+
+***Why Linux?*** The majority of servers run on Linux, a free operating system which inherited its predecessor's (GNU's) mission to give users freedom. Linux is completely open source, allowing users to see and modify any part of its inner workings. Linux is also extremely stable, allowing servers to be up for years at a time without restarting. 
+
+## Task 1: get an ssh client 
+***Secure Shell(ssh):*** a protocol which creates a secure channel for two computers to communicate even over an unsecured network. This is how we will connect to EC2. 
+
+**How to prepare for ssh:**
+
+**Windows:** I do not like Windows terminals, you do not like Windows terminals, no one likes Windows terminals. Go to [The Putty website](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) and download Putty. A GUI should appear to guide you through the installation. 
+
+**Mac or Linux:** No preparation necessary, since you already have a native ssh client. 
+
+## Task 2: Aliview
 
 Okay, we have had enough of conceptual stuff. Let's get at it with some cool visuals. 
 
@@ -127,21 +83,9 @@ The SNP differences are obvious, but you will notice that there are weirder diff
 
 Here's another cool tool: Blast will quickly look up a sequence in the NCBI database and spit out similar sequences it finds. Now, go to aliview and click edit->delete all gaps in all sequences. Copy the first sequence into the clipboard. Google NCBI Blast and open up the first result. Paste the sequence into the big box in the top of the page and click **BLAST** at the bottom. After a few seconds, Blast should link you to a whole lot of glycoprotein that are... from the article these were published in! This is one of the basic uses of Blast - to figure out where a sequence comes from. 
 
-## Task 4: Explore your EC2
+## Task 3: Explore your EC2
 
-### Prerequisites
-
-***Secure Shell (ssh):*** a protocol which creates a secure channel for two computers to communicate even over an unsecured network. This is how we will connect to EC2. 
-
-**How to prepare for ssh:**
-
-**Windows:** I do not like Windows terminals, you do not like Windows terminals, no one likes Windows terminals. Go to [The Putty website](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) and download Putty. A GUI should appear to guide you through the installation. 
-
-**Mac or Linux:** No preparation necessary, since you already have a native ssh client. 
-
-### Connecting
-
-In your email, you should have a password from me. 
+In your email, you should have a password from me. Your username for EC2 is the same as your ucsd username.
 
 **Windows:** Open putty, paste ```ec2-13-59-255-161.us-east-2.compute.amazonaws.com``` into the Host Name section and select port 22 and SSH on that same page. Type a name under Saved Sessions and click the Save icon on the right. Now, press Open and type your username and password when prompted. 
 
