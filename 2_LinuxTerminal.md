@@ -39,23 +39,22 @@ How do you know what command to use to do sometihng you want? Simple: for now, w
 
 *Note: Anytime you need a refresher on what a command does, type the command line with the --help option like so: ```ls --help```. If that does not work, try ```man ls```. One (or both) of these will pull up information on how to use the command. Can you figure out what the ls command does?*
 
-### What Am I looking At? What Can I Do?
+### What Am I looking At? What Can I Do? How Can I Do It?!
 
-In order to get started, we need to be able to do the same thing we do in a file explorer in the command line. You may find it inconvenient at first, but with time these commands become faster and more versatile than the file explorer's interface. 
+When you open up your laptop, you are presented with your "Desktop". When you open up a terminal (or connect to a server via ssh!), you are presented with your "Home".
+
+When you want to open up the "Pictures" folder on your laptop, you find the folder labeled "Pictures", and then open it. Uh-oh... we don't know how to (1) find something or (2) open something!
+
+Let's take a step back and talk about all the files in your computer are organized. As you know, you can have different files stored in different places on your computer. You do this by creating folders (inside of other folders), and creating files inside of them. This is **exactly how our server works**, except we call folders "directories".
+
+Similar to how "Desktop" is a folder on your computer, "Home" is a directory on your account on the server. And similar to how your "Desktop" can have folders created in it, so can "Home". You can look at what's inside with the `ls` command, which is short for "list". Type `ls` to see what is in your "Home" directory. (We now know how to find something!)
+
+The answer: nothing! Let's change that by creating a directory. You can do this with the `mkdir` command. Let's create a directory called "software" by doing `mkdir software`. Confirm that this worked by looking at your home directory again.
+
+--
 
 The forward slashes in a terminal console represent directories, with the home directory being a ```~```. Your default folder on EC2 is your use folder, which is ```~/username```. This means the folder named after your username is a subfolder of the home folder, which is represented by ```~```. 
-
-```cd```(change directory) Type cd followed by the directory's path to navigate a terminal to that directory. ```.``` is current directory and ```..``` is the parent of the current directory. 
-
-```ls```(list files) prints out the contents of a directory. There are tons of options for this command - my favorite is ```ls -lah``` , since it prints the directory contents in list format(```-l```), includes hidden files/folders(```-a```), and makes the storage sizes more readable for humans(```-h```). 
-
-```mkdir```(make directory) Creates a directory with the same name as the argument you give it. 
-
-
-### [Your Turn!] Make a Software Folder
-
-
-Navigate your terminal to your home directory(the directory named after your UCSD username) using ```cd```. Type ```mkdir software``` and press enter. Type ```ls``` to see the changes you have made. The reason for a software folder is to keep your software in it, oddly enough. Usually, you would place executables in the /bin system folder, but you are not the admin so you cannot access that folder :( . This is often the case when you ssh into a system, so get used to having a dedicated software folder.  
+  
 
 ### [Your Turn!] Investigate Genetic Data
 
@@ -67,3 +66,15 @@ Navigate your terminal to your home directory(the directory named after your UCS
 
 
 ### Once you're done, show your answers to an instructor to get checked off. Congratulations! You've completed the first lesson of the Bioinformatics Crash Course!
+
+## Commands Cheat Sheet
+
+```ls```(list files) prints out the contents of a directory. There are tons of options for this command - my favorite is ```ls -lah``` , since it prints the directory contents in list format(```-l```), includes hidden files/folders(```-a```), and makes the storage sizes more readable for humans(```-h```). 
+
+```mkdir```(make directory) Creates a directory with the same name as the argument you give it. 
+
+```cd```(change directory) Type cd followed by the directory's path to navigate a terminal to that directory. ```.``` is current directory and ```..``` is the parent of the current directory. 
+
+
+
+
