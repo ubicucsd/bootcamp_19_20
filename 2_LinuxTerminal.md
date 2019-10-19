@@ -65,12 +65,22 @@ Finally, let's go back home. You might think that `cd ../..` will take you there
 
 ### [Your Turn!] Investigate Genetic Data
 
-3 tasks:
+Let's get to work with some real genetic data!
 
-1. Print all of the contents of the downloaded dataset to terminal window ("standard output")
+Start in your home directory. Create and enter a directory called "week1". Then run the following command:
+```shell
+wget https://raw.githubusercontent.com/biopython/biopython/master/Doc/examples/ls_orchid.fasta
+```
+
+You've just downloaded a file full of a bunch of genetic data! You can take a peek at the first few lines by doing `head ls_orchid.fasta`. Your job is to analyze this file.
+
+You have 3 tasks:
+
+1. Print all the contents of the downloaded dataset to terminal window ("standard output")
 2. Print how many lines there are in the file
 3. Print how many lines there are in the file **THAT CONTAIN GENETIC DATA** (no headers)
 
+The commands cheat sheet below and the hint above about deciphering commands you're not familiar with are your friends. Good luck!
 
 ### Once you're done, show your answers to an instructor to get checked off. Congratulations! You've completed the first lesson of the Bioinformatics Crash Course!
 
@@ -81,6 +91,8 @@ Finally, let's go back home. You might think that `cd ../..` will take you there
 ```mkdir```(make directory) Create a directory with the same name as the argument you give it.
 
 ```cd```(change directory) Change directory to whatever is specified.
+
+```head``` Print the beiginning of the specified file to the terminal.
 
 ```cat``` Print whatever follows to the terminal. If a file name is specified, print the contents to the terminal.
 
