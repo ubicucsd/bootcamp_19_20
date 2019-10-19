@@ -78,7 +78,7 @@ You have 3 tasks:
 
 1. Print all the contents of the downloaded dataset to terminal window ("standard output")
 2. Print how many lines there are in the file
-3. Print how many lines there are in the file **THAT CONTAIN GENETIC DATA** (no headers)
+3. [Challenge] Print how many lines there are in the file **THAT CONTAIN GENETIC DATA** (no headers)
 
 The commands cheat sheet below and the hint above about deciphering commands you're not familiar with are your friends. Good luck!
 
@@ -99,3 +99,5 @@ The commands cheat sheet below and the hint above about deciphering commands you
 ```wc``` (word count) Print the number of words in the file name specified after the command.
 
 ```grep``` Print out lines matching the specified conditions.
+
+*Hint (for challenege): You can run commands one after the other using `|`. For example, `ls | wc` will first use `ls` to generate a list of all the files in your directory, send that to `wc`, which will output how many files are in your directory, how many words are in the file names, and how many characters are there.*
