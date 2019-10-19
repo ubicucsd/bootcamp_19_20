@@ -39,7 +39,7 @@ How do you know what command to use to do sometihng you want? Simple: for now, w
 
 *Note: Anytime you need a refresher on what a command does, type the command line with the --help option like so: ```ls --help```. If that does not work, try ```man ls```. One (or both) of these will pull up information on how to use the command. Can you figure out what the ls command does?*
 
-### What Am I looking At? What Can I Do? How Can I Do It?!
+### What Am I Looking At?
 
 When you open up your laptop, you are presented with your "Desktop". When you open up a terminal (or connect to a server via ssh!), you are presented with your "Home".
 
@@ -47,14 +47,21 @@ When you want to open up the "Pictures" folder on your laptop, you find the fold
 
 Let's take a step back and talk about all the files in your computer are organized. As you know, you can have different files stored in different places on your computer. You do this by creating folders (inside of other folders), and creating files inside of them. This is **exactly how our server works**, except we call folders "directories".
 
-Similar to how "Desktop" is a folder on your computer, "Home" is a directory on your account on the server. And similar to how your "Desktop" can have folders created in it, so can "Home". You can look at what's inside with the `ls` command, which is short for "list". Type `ls` to see what is in your "Home" directory. (We now know how to find something!)
+Similar to how "Desktop" is a folder on your computer, "Home" is a directory on your account on the server. And similar to how your "Desktop" can have folders created in it, so can "Home". You can look at what's inside with the `ls` command, which is short for "list". Type `ls` to see what's in your "Home" directory. (We now know how to find something!)
 
-The answer: nothing! Let's change that by creating a directory. You can do this with the `mkdir` command. Let's create a directory called "software" by doing `mkdir software`. Confirm that this worked by looking at your home directory again.
+### What Can I Do?
 
---
+There's nothing in your home directory! Let's change that by creating a directory. You can do this with the `mkdir` command. Let's create a directory called "software" by doing `mkdir software`. Confirm that this worked by looking at your home directory again.
 
-The forward slashes in a terminal console represent directories, with the home directory being a ```~```. Your default folder on EC2 is your use folder, which is ```~/username```. This means the folder named after your username is a subfolder of the home folder, which is represented by ```~```. 
-  
+Now that we can find the "software" directory, let's move into it (the equivalent of opening a folder on your laptop). Type `cd software` to **c**hange **d**irectory to software. Next, type `ls` and confirm that nothing is in this freshly created directory. Create another directory here called "docs" (yes, directories can contain other directories, much like folders can contain folders!).
+
+Great! You can now make a directory and enter it. The last step is to exit the directory. You can do this by just telling the terminal to change directory to whatever contains the current directory (i.e. the parent directory). The alias for the parent directory is `..`. Confirm you've moved back to the home directory using `ls`.
+
+On your laptop, if you want to get to a deeply nested folder, you have to keep unfolding the layers by opening multiple folders. Wouldn't it be nice to be able to just get directly to a folder? We can do this using `cd` by specifying multiple layers we want to change into. For example, we just created a "docs" inside of "software". We can get into this directory by typing `cd software/docs`, where the terminal will recognize "/" as a sign that what follows will be inside of "software".
+
+Finally, let's go back home. You might think that `cd ../..` will take you there, and you would be right! You'd look at the parent's parent, which is the home directory. However, there's an easier way. Much like `..` is an alias to the parent directory, `~` is an alias to your home directory. Simply do `cd ~` from anywhere and you'll end up home!
+
+`.` is a special alias too! Can you figure out what it refers to? Try `cd .` and see where you go.
 
 ### [Your Turn!] Investigate Genetic Data
 
@@ -69,12 +76,14 @@ The forward slashes in a terminal console represent directories, with the home d
 
 ## Commands Cheat Sheet
 
-```ls```(list files) prints out the contents of a directory. There are tons of options for this command - my favorite is ```ls -lah``` , since it prints the directory contents in list format(```-l```), includes hidden files/folders(```-a```), and makes the storage sizes more readable for humans(```-h```). 
+```ls```(list files) Print out the contents of a directory. 
 
-```mkdir```(make directory) Creates a directory with the same name as the argument you give it. 
+```mkdir```(make directory) Create a directory with the same name as the argument you give it.
 
-```cd```(change directory) Type cd followed by the directory's path to navigate a terminal to that directory. ```.``` is current directory and ```..``` is the parent of the current directory. 
+```cd```(change directory) Change directory to whatever is specified.
 
+```cat``` Print whatever follows to the terminal. If a file name is specified, print the contents to the terminal.
 
+```wc``` (word count) Print the number of words in the file name specified after the command.
 
-
+```grep``` Print out lines matching the specified conditions.
