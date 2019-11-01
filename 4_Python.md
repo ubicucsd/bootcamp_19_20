@@ -2,9 +2,7 @@
 
 ## The Big Picture
 
-So far, we've been working with bioinformatic data only on the command line. However, you'll often want to do more than the command line easily allows. Today, we're going to be learning the basics of one of the most popular languages for doing that: Python.
-
-(Side note: If you know a bit about Python, you'll know that there are two commonly used versions: python2 and python3. **They are VERY similar.** You're going to run into programs written for/in either version, so being familiar with both is important. For this lesson, however, we're going to be using python2 because... well... we are.)
+So far, we've been working only on the command line. However, you'll often want to do more than the command line easily allows. Today, we're going to be learning the basics of one of the most popular languages for doing that: Python.
 
 ## Getting Started
 
