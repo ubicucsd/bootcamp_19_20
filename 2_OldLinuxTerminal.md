@@ -6,11 +6,10 @@ Welcome to week 2 of the Crash Course. Today's lesson will be split into two dis
 
 ## Jumping in the Deep End
 
-Last session, we said that we prioritize interactive lessons. We're going to waste no time living by this mantra.
+Last session, we said that we believe in active learning. Below are a bunch of exercises in roughly increaisng order of difficulty. [Here's] a bunch of advanced command line info you might find useful.
 
-## Getting yer feet wet
+***Behind the Scenes:** You might wonder, "Why are we being given tasks that we haven't been taught how to complete?" The answer: that's science. One of the most powerful skills in bioinformatics is simply being able to parse documenatation to figure out what you need to do. Taking the general knowledge from last lesson and applying it to scenarios you've never seen before is very, very valuable!*
 
-Here are a quick batch of tasks/exercises using the command line (and different commands) in roughly increasing order of difficulty:
 
 ##### (0.) Copy-paste the following two commands into your terminal in order and hit enter.
 `cd ~`  
@@ -18,18 +17,22 @@ Here are a quick batch of tasks/exercises using the command line (and different 
 
 ##### 1. Enter the directory that was just created
 
-##### 2. Name all of the files (not other directories!) inside this directory. How many are there? (hint: use `ls`)
+##### 2. Name all of the files (not other directories!) inside this directory. How many are there?
 
-##### 3. How many lines are in file1.txt? (hint: use `wc`)
+##### 3. How many lines are in file1.txt? How many lines inside file2.txt contain the characters "no"?
 
-##### 5. How many lines inside file2.txt contain the characters (not the word) "no"? This means "anNOunce" will count too. (hint: use a pipe of `grep` and `wc`)
+##### 4. Execute the "instructions" file, and follow the prompts. (hint: `./instructions`)
 
-##### 6. (Challenge 1) Execute the "instructions" file. Follow the instructions. (hint: `./instructions`)
-
-##### 7. (Challenge 2) Attempt to delete the directory you downloaded in step 0. This directory is called "parent".
+##### 5. Delete the directory you downloaded in step 0.
 
 
-## Downloading
+## Your Own File
+
+So far, you've been working with files provided to you. However, for most things you'll want to do moving forward, you'll need to create your own. How do you do that?
+
+### vim
+
+We're going to be using a text editor called "vim". Think of vim as Microsoft Word, but for your command line. You can use vim to open a file or create your own (just like Word!).
 
 ```scp```(secure copy) is a command used to copy files from one machine to another. The first argument is the source location, while the second argument is the destination. ```scp file.txt my_username@dns_address.com:/home/my_username/docs```
 
