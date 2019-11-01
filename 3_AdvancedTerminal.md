@@ -68,3 +68,8 @@ Create an executable file called `greet.sh` that can be executed to print "Hello
   3. How can I execute a file?
   4. [Optional, depending on if #3 fails] How can I make a file executable?
 </details>
+
+[Challenge] Update your program to print "Hello [your_username]". This should NOT be hardcoded, meaning if your program prints "Hello joesmith" on your laptop, it should print "Hello smansuri" on mine without any changes.
+
+## Python Basics
+[Click here](/4_Python.md) to move on to the next part of this lesson.
