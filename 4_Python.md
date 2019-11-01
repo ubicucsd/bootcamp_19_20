@@ -1,5 +1,4 @@
-# Intro to Python
-#### Skill: Python
+# Python Basics
 
 ## The Big Picture
 
