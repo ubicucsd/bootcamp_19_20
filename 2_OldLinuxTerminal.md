@@ -35,6 +35,7 @@ So far, you've been working with files provided to you. However, for most things
 We're going to be using a text editor called "vim". Think of vim as Microsoft Word, but for your command line. You can use vim to open a file or create your own (just like Word!).
 
 Here's a walkthrough of exactly what you'd need to hit on your keyboard to create a file called "new.txt" that contains "hello there" inside of it:
+
 ```
 vim new.txt
 i
@@ -44,11 +45,26 @@ hello there
 ```
 
 <details>
-  <summary>Click me for an explanation of these commands!</summary>
+  <summary>Unsure what these commands do? Click me!</summary>
   
   1. `vim new.txt` - Open a file called new.txt in vim. If no file exists in the directory (true for us!) create a new one
   2. `i` - Moves you into insert mode (where you're actually allowed to type) 
   3. `hello there` - Adds text into the file
   4. `esc` - Moves out of insert mode
   5. `:x` - Saves and quits the file
+</details>
+
+Use `ls` and `cat` to confirm that you've succeeded in creating this file.
+
+### Your Turn
+Create an executable file called `greet.sh` that can be executed to print "Hello World" to the command line. 
+
+<details>
+  <summary>No idea where to start? Click me!</summary>
+  
+  Tackle these subproblems:
+  1. What is an executable file?
+  2. How do I make a file print "Hello World"?
+  3. How can I execute a file?
+  4. [Optional, depending on if #3 fails] How can I make a file executable?
 </details>
