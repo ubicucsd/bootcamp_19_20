@@ -6,7 +6,7 @@ Welcome to week 2 of the Crash Course. Today's lesson will be split into two dis
 
 ## Jumping in the Deep End
 
-Last session, we said that we believe in active learning. Below are a bunch of exercises in roughly increaisng order of difficulty. [Here's] a bunch of advanced command line info you might find useful.
+Last session, we said that we believe in active learning. Below are a bunch of exercises in roughly increaisng order of difficulty. [Here's](/extras/2.1_AdvancedCommands.md) a bunch of advanced command line info you might find useful.
 
 ***Behind the Scenes:** You might wonder, "Why are we being given tasks that we haven't been taught how to complete?" The answer: that's science. One of the most powerful skills in bioinformatics is simply being able to parse documenatation to figure out what you need to do. Taking the general knowledge from last lesson and applying it to scenarios you've never seen before is very, very valuable!*
 
@@ -34,98 +34,21 @@ So far, you've been working with files provided to you. However, for most things
 
 We're going to be using a text editor called "vim". Think of vim as Microsoft Word, but for your command line. You can use vim to open a file or create your own (just like Word!).
 
-```scp```(secure copy) is a command used to copy files from one machine to another. The first argument is the source location, while the second argument is the destination. ```scp file.txt my_username@dns_address.com:/home/my_username/docs```
-
-```curl``` Will download stuff for you. The most simple and relevant combination of options is ```curl -L https://examplelink.com -outdir .``` which will download from https://examplelink.com into the current directory (indicated by the dot). 
-
-```apt-get```Handles packages from the apt library for Debian based systems. However, this installs packages system-wide so you are not going to be able to use it on EC2. The mac equivalent is homebrew. ```sudo apt-get install google-chrome-stable``` will install chrome. 
-
----
-
-### TODO: Get FastQC and Kallisto
-
-Quality of genetic information is important! FastQC is the gold standard for quality control in the bioinformatics field. Google "download FastQC" and find the instructions. Make sure to select the correct package for a linux system, then go think about how you would get that package onto EC2. There are two main ways to do this. 
-
-*Hint: the last three commands mentioned contain both of the two ways you can get FastQC onto EC2*
-
-Next, we need Kallisto, which describes itself as "a program for quantifying abundances of transcripts from RNA-Seq data, or more generally of target sequences using high-throughput sequencing reads." Google "download kallisto" and find the appropriate file (it should be a .tar.gz). Use the same method you used for FastQC to transfer it to EC2(or challenge yourself to find the second way).
-
----
-
-## Unpackaging
-
-Much of the data people want to download is large, but they want it fast. That's why things like .zip, .tar, .gz and such exist. Those are the file extensions of compressed data. In order to make software work, it must be unpackaged.
-
-```unzip``` Is exactly what it sounds like. This command unzips .zip file types. 
-
-```tar```(tape archive) Is the command linux uses to package and unpackage stuff. This command has an incomprehensible amount of confusing options, so let me just copy paste the ones you should care about. ```tar -xvf file.tar.gz -C .``` unpacks a .tar.gz file into the current directory and ```tar -xvf -C .``` unpacks a .tar file into the current directory. The -C option indicates the files' destination.
-
----
-
-### TODO: Unpackage your FastQC Kallisto
-
-Now you have your fastqc*.zip in your software folder. In order to use it, you're going to have to unpackage it. Look a couple lines up to figure out how. 
-
-The same goes for your kallisto .tar.gz. This is a filetype you will run into often when dealing with linux, since it is the default way linux compresses a folder. If you look in the Unpackaging section of this document, you will find instructions on how to open up this strange creature. 
-
----
-
-## Compilation
-
-What is compilation? It is the conversion of one programming language into another. Typically, it is a conversion of what's known as a high-level language (C, Java, Python, etc) to a low level language (binary, assembly). CPUs understand only very very very basic logic, so a super smart program called a compiler has to convert your convoluted and messy code into the simple delicious porridge that the CPU can eat(execute).
-
-**shell scripts and python files** do not need compilation.
-
-**java** compiles by ```javac filename.java```
-
-**C** ```gcc -c filename.c``` to compile and assemble. 
-
-Note: Much of the time, software you download online is already in binary form so there is no need to compile. This is not always the case!
-
-## Execution
-
-**/bin**(binaries) contains your executable files and shells. The computer has a list of folders it searches through to find executables when you type a command and the /bin directory is one of them. When you download software, you should place the executable file or a symbolic link into the /bin directory.
-
-**shell script** a simple ```./executable``` will suffice to execute a script. 
-
-**python** will automatically compile for you before executing with the command ```python filename.py```. 
-
-**java** can be executed with ```java compiledfilename```
-
-**C** is executed like a shell script ```./out```
-
----
-
-### TODO Actually Quantify Stuff
-
-Okay, we now how to execute now. The FastQC folder you have now contains an executable called fastqc. Go into the folder containing the executable, type ```./fastqc --help``` to see usage instructions. Your task is simply to run the fastqc on each of the files sitting in the ```/srv/lesson2/sub_Gastric_Ctr``` and ```/srv/lesson2/sub_Gastric_Affect```directories. FastQC will produce some .html files, which I will just show on the large screen and explain in the interest of saving time. 
-
-Kallisto is a little more complicated. Our first step is to build a kallisto index file, which will assign an index to each RNA transcript we will quantify and optimizes the quantifying procedure in general. Where did we get these RNA transcripts you ask? Good question! I googled "mouse lncRNA database" and eventually happened upon a [website](https://www.gencodegenes.org/) where there was a fantastically easy to download .fasta file full of lnc RNA sequences from mice. Anyways, go back to the kallisto website and look at the instructions on how to index a file. The list of target sequences I got from gencode is at ```/srv/lesson2/gencode.vM17.lncRNA_transcripts.fasta``` and you might want to specify the name for the destination file. 
-
-Next, you will need to look at the ```kallisto quant``` command. Specify an output folder, the index you made just now, set --bootstrap-samples=100, and finally include the forward and reverse paired end files at the end. You will run the quant command 4 times for the 2 control and 2 affected files. You might want to create 4 separate output folders in order to keep everything organized. 
-
-The last part will be a bit of a walkthrough, since it is kind of complicated (I don't understand every option either, don't worry about it). Open up R  by simply typing R into the terminal and pressing enter. Below is the template for what you need to execute in R in order to compare transcription levels. Note the parts where you need to enter a path and replace them with your own filepaths
-
-
+Here's a walkthrough of exactly what you'd need to hit on your keyboard to create a file called "new.txt" that contains "hello there" inside of it:
 ```
-library("sleuth")
-#paths to Kallisto outputs from MPNST study
-sample_id = c("/home/mchernys/Documents/UCSD_Classes/Spring_2018/CSE_185/final_project/kallisto_output/Gastric_Ctr_Rep1", "/home/mchernys/Documents/UCSD_Classes/Spring_2018/CSE_185/final_project/kallisto_output/Gastric_Ctr_Rep2", "/home/mchernys/Documents/UCSD_Classes/Spring_2018/CSE_185/final_project/kallisto_output/Gastric_Affect_Rep1", "/home/mchernys/Documents/UCSD_Classes/Spring_2018/CSE_185/final_project/kallisto_output/Gastric_Affect_Rep2")
-
-kallisto_dirs = file.path(sample_id)
-s2c = read.table(file.path("/home/mchernys/Documents/UCSD_Classes/Spring_2018/CSE_185/final_project/sleuth_Gastric_info.txt"), header = TRUE, stringsAsFactors=FALSE)
-s2c = dplyr::mutate(s2c, path = kallisto_dirs)
-
-so = sleuth_prep(s2c, extra_bootstrap_summary = TRUE)
-so = sleuth_fit(so, ~condition, 'full')
-so = sleuth_fit(so, ~1, 'reduced')
-so = sleuth_lrt(so, 'reduced', 'full')
-
-sleuth_table <- sleuth_results(so, 'reduced:full', 'lrt', show_all = FALSE)
-sleuth_significant <- dplyr::filter(sleuth_table, qval <= 0.05)
-
-
-write.table(sleuth_significant, "/home/my_username/sleuth_output/", sep="\t", quote=FALSE)
-gg=plot_transcript_heatmap(so, transcripts, units = "tpm", trans = "log", offset = 1)
-ggsave("/home/my_username/plots/", plot=gg)
+vim new.txt
+i
+hello there
+'esc'
+:x
 ```
+
+<details>
+  <summary>Click me for an explanation of these commands!</summary>
+  
+  1. `vim new.txt` - Open a file called new.txt in vim. If no file exists in the directory (true for us!) create a new one
+  2. `i` - Moves you into insert mode (where you're actually allowed to type) 
+  3. `hello there` - Adds text into the file
+  4. `esc` - Moves out of insert mode
+  5. `:x` - Saves and quits the file
+</details>
