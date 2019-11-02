@@ -72,16 +72,22 @@ Now, try to run "Hello.py". Python will complain that there's a problem with you
 
 ## Loop-D-Loop
 
-Say I have a fasta file containing genetic information ([what is a fasta file?](https://www.genomatix.de/online_help/help/sequence_formats.html#FASTA)). Inside are some number of reads (remember reads from our [last lesson](/1_Welcome.md)?). I want to write a Python program that ONLY outputs the header lines (the ones that start with ">"). How can I do it? Think about how you might start before continuing.
+Say I have a fasta file containing genetic information ([what is a fasta file?](https://www.genomatix.de/online_help/help/sequence_formats.html#FASTA)). Inside are some number of reads (remember reads from our [last lesson](/1_Welcome.md)?). I want to write a Python program that ONLY outputs the header lines (the ones that start with ">"). How can I do it?
 
-```
--check every line-
-  -if it starts with a ">"-
-    -print the line-
-```
+<details>
+  <summary>Thought about it? Click me to confirm your answer!</summary>
+  
+  ```
+  -check every line-
+    -if it starts with a ">"-
+        -print the line-
+  ```
+
 This is one simple **representation** of how you could achieve this task. The **implementation** in Python, as we shall see, uses a loop. Which one of the three pseudocode lines above suggests we will need a loop?
+</details>
 
-First, however, let's get a sample fasta file. Use the following command to download it straight in your working directory:
+
+Let's get a sample fasta file. Use the following command to download it straight in your working directory:
 
 ```shell
 cp /srv/Winter19/gencode.vM17.lncRNA_transcripts_subsampled.fasta test.fasta
