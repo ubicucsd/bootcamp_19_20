@@ -4,9 +4,11 @@
 
 So far, we've been working only on the command line. However, you'll often want to do more than the command line easily allows. Today, we're going to be learning the basics of one of the most popular languages for doing that: Python.
 
+
+
 ## Getting Started
 
-Create a new directory (remember: mkdir) wherever you are saving your work. Call it "pydir". Enter the directory.
+Create a new directory called "pydir". Enter the directory.
 
 Python should already be installed on your workstations. Let's make sure: Type the following on the command line:
 ```shell
@@ -66,11 +68,11 @@ print "Hello World"
     print "Indented line"
 ```
 
-Now, try to run "Hello.py". Python will complain that there's a problem with your indentation (there was no need to indent, but you did anyways). You'll learn more about when to indent in the next section. Speaking of which, it's time for some bioinformatics.
+Now, try to run "Hello.py". Python will complain that there's a problem with your indentation (there was no need to indent, but you did anyways). You'll learn more about when to indent in the next section. Speaking of which, it's about time for some bioinformatics.
 
 ## Loop-D-Loop
 
-Say I have a fasta file that has some number of reads (make sure you remember fasta format or you'll have trouble with this exercise!). I want to write a Python program that ONLY outputs the header lines (the ones that start with ">"). How can I do it? Think about how you might start before continuing.
+Say I have a fasta file containing genetic information ([what is a fasta file?](https://www.genomatix.de/online_help/help/sequence_formats.html#FASTA)). Inside are some number of reads (remember reads from our [last lesson](/1_Welcome.md)?). I want to write a Python program that ONLY outputs the header lines (the ones that start with ">"). How can I do it? Think about how you might start before continuing.
 
 ```
 -check every line-
@@ -121,101 +123,4 @@ for line in file:
 
 Run Loop.py and see what happens. Voila.
 
-## Packages
-
-An important feature of Python is its packages. Think of packages as Python programs someone else has written that you can borrow and use for your own purposes.
-
-For example, you may want to take the first sequence of "test.fasta" and use NCBI BLAST (learn more about the BLAST database [here](https://blast.ncbi.nlm.nih.gov/Blast.cgi)) to determine what organism the sequence may have come from. You wouldn't want to write your own code to connect to the database... instead you can use a nifty package to do that for you. Let's try:
-
-First, extract the first two lines of "test.fasta" into a new file, "small.fasta":
-
-```shell
-head -n2 test.fasta >> small.fasta
-```
-
-Now, install the correct package. The one you want to use is called [BioPython](https://biopython.org/). Use the Python program installer (called pip) to install the package to your user:
-
-```shell
-pip install --user biopython
-```
-
-Great! BioPython is now available on your account. Let's use it. Create a new file "Blast.py", and add the following code:
-
-```python
-from Bio.Blast import NCBIWWW
-
-fasta_string = open("small.fasta").read()
-result_handle = NCBIWWW.qblast("blastn", "nt", fasta_string, format_type='Text', hitlist_size=1)
-print result_handle.read()
-```
-
-Let's walk through what this does. The first line takes the programs we want for NCBI from BioPython and prepares them to be used. The second line reads in the "small.fasta" file. The third line is the most important: it takes the genetic data, connects to the NCBI BLAST database, searches for matches, and then returns the result from the database. Finally, the last line prints that result.
-
-You can try running "Blast.py" now if you'd like, but I'd recommend coming back to this after completing the next 3 exercises.
-
-## Your turn!
-
-### Warm-up
-You're going to print your name using the alphabet. Declare a variable that holds a string containing
-all 26 letters of the alphabet, and one space character (just use the declaration provided below for simplicity--the last character is a space!). Then, on the next line use one print statement that accesses letters in the alphabet variable to print out your name.
-
-```python
-"ABCDEFGHIJKLMNOPQRSTUVWXYZ "
-```
-
-We'll now shift our focus onto applying what we've learned to bioinformatics. 
-Various implementations may work. Pick any that you like.
-
-### Challenge 1
-
-Create a file that takes in the DNA data (A/T/C/G) from "test.fasta" and prints out the file as RNA data (A/U/C/G). (Note: This is not how real transcription works. Just use this simple replacement as an example).
-
-**Make sure you don't attempt to transcribe the header lines!**
-
-#### SOLUTION
-```python
-file = open("test.fasta", "r")
-
-for line in file:
-  if line[0] != ">":
-    ans = ""
-    for char in line:
-      if char == "T":
-        ans += "U"
-      else:
-        ans += char
-    print ans
-  else:
-    print line
-```
-
-### Challenge 2
-
-Create a file that takes in "test.fasta" and prints out the GC-content of all of the data. Hint: the GC-content is the percentage of G's + C's in some genetic data. If you wish, you can read more about it [here](https://en.wikipedia.org/wiki/GC-content). Don't worry about whitespace stripping (especially if you don't know what that is).
-
-**Hint: If you keep getting 0, try explicitly converting either the GC count or the string length to a decimal using float()**
-
-
-#### SOLUTION
-```python
-file = open("test.fasta", "r")
-
-siz = 0
-gc = 0
-for line in file:
-  # This next line is optional and has to do with whitespace stripping. It changes the answer by a little--don't worry about it.
-  line = line.strip()
-  if line[0] != ">":
-    for char in line:
-      siz += 1
-      if char == "G" or char == "C":
-        gc += 1
-
-ans = gc/float(siz)
-print ans*100
-```
-
-
-## Credits
-
-Exercises were adapted from [Rosalind](http://rosalind.info)
+## Congratulations! You've completed Week 2 of the Bioinformatics Crash Course.
