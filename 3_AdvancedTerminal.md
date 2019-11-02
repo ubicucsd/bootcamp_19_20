@@ -6,25 +6,24 @@ Welcome to week 2 of the Crash Course. Today's lesson will be split into two dis
 
 ## Jumping in the Deep End
 
-Last session, we said that we believe in active learning. Below are a bunch of exercises in roughly increaisng order of difficulty. [Here's](/extras/2.1_AdvancedCommands.md) a bunch of advanced command line info you might find useful.
+Last session, we said that we believe in active learning. Below are a bunch of exercises in roughly increaisng order of difficulty. [Here's](/extras/2.1_AdvancedCommands.md) a bunch of advanced command line info you might find useful, though Google is probably your best friend.
 
 ***Behind the Scenes:** You might wonder, "Why are we being given tasks that we haven't been taught how to complete?" The answer: that's science. One of the most powerful skills in bioinformatics is simply being able to parse documenatation to figure out what you need to do. Taking the general knowledge from last lesson and applying it to scenarios you've never seen before is very, very valuable!*
 
-
-##### (0.) Copy-paste the following two commands into your terminal in order and hit enter.
-`cd ~`  
-`cp -r ../smansuri/week2/ ~`
+##### (0.) Copy-paste the following command into your terminal in order and hit enter.
+`cp -r ~/../smansuri/week2/ ~`
 
 ##### 1. Enter the directory that was just created
 
 ##### 2. Name all of the files (not other directories!) inside this directory. How many are there?
 
-##### 3. How many lines are in file1.txt? How many lines inside file2.txt contain the characters "no"?
+##### 3. Execute the "instructions" file, and follow the prompts. (hint: `./instructions`)
 
-##### 4. Execute the "instructions" file, and follow the prompts. (hint: `./instructions`)
+##### 4. file1.txt contains the text of a Sherlock Holmes book. How many lines of the file does it take to recount his tale in Bohemia?
 
-##### 5. Delete the directory you downloaded in step 0.
+##### 5. How many lines in file2.txt contain a period? (The answer is not 60)
 
+##### 6. Delete the directory you downloaded in step 0.
 
 ## Your Own File
 
