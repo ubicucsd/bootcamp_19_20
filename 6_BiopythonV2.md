@@ -10,37 +10,54 @@ Before you're allowed to work with real genetic data, you'll need to familiarize
 
 For example, earlier you determined the GC content of your sequence by writing your own algorithm. Instead, it's a lot easier to find a Python package that already has a built-in GC counter, and just run it by doing something like `sequence.count_gc()`, for example.
 
-The Python package we'll be using for our bioinformatics purposes is called Biopython. First, you'll need to install Biopython. Run the following on your command line:
-```shell
-pip install --user biopython
+The Python package we'll be using for our bioinformatics purposes is called Biopython. This is already installed on our cluster. If it wasn't, you could install it by doing (DO NOT ACTUALLY DO THIS): `pip install --user biopython`.
+
+Instead, prove to yourself that Biopython is already on the cluster by doing:
+```
+pip list
 ```
 
 ## Warm Up (Biopython)
 
-Great! Now that you've downloaded Biopython, let's figure out 1) what it does and 2) how to use it.
+### Seq Objects
+
+Much like the fundamental building block of genetics is DNA, the fundamental building block of Biopython (at least for what we're doing) is the Seq object. 
+
+Great, we have Biopython. Let's figure out what it does and how to use it.
 
 ## The First Glimpse
 
 ### Access
 
-You'll be using the same genetic data as before.
+You'll be using the same genetic data as before. This time, instead of having various files for various methods, we're going to be using just one file. Isn't that handy? Copy it to your directory:
+```
+cp ~/../smansuri/biopython.py .
+```
 
 ### File Extenstion
 
-Confirm that you renamed your file as *unidentified.fasta*. If you did not, review [FASTA format](https://www.genomatix.de/online_help/help/sequence_formats.html#FASTA)
+Confirm that you renamed the initisl file as *unidentified.fasta*. If you did not, review [FASTA format](https://www.genomatix.de/online_help/help/sequence_formats.html#FASTA)
 
 ## Transcription Simulation
 
 ### Reverse Complement
 
+Before, you had to write the logic for the reverse complement yourself. Now, just use the Seq object's `reverse_complement()` method.
 
 ### RNA Transcription
 
+Similar to above, use the `transcribe()` method on the reverse complement. Voila, one line and you're done.
 
 ## A Potential Breakthrough
 
+Recall the two markers that could suggest your unknown sample may, in fact, be related to the one seen in rats:
+1. The sequence "ATGGAGCTGACTGTGGAGGCATG" is often present.
+2. The GC Content is above 55%.
+
+Use the Seq object's `find()` method for #1, and explore the Biopython [documentation](http://biopython.org/DIST/docs/tutorial/Tutorial.pdf) to find a method for #2.
 
 ## BLAST
+
 
 
 ## Congratulations! You've completed Week 3 of the Bioinformatics Crash Course.
@@ -58,59 +75,6 @@ Exercises are adapted from [Rosalind](http://rosalind.info), the official [Biopy
 
 
 
-
-
-
-
-
-Great! BioPython is now available on your account. Let's use it. Create a new file "Blast.py", and add the following code:
-
-```python
-from Bio.Blast import NCBIWWW
-
-fasta_string = open("small.fasta").read()
-result_handle = NCBIWWW.qblast("blastn", "nt", fasta_string, format_type='Text', hitlist_size=1)
-print result_handle.read()
-```
-
-Let's walk through what this does. The first line takes the programs we want for NCBI from BioPython and prepares them to be used. The second line reads in the "small.fasta" file. The third line is the most important: it takes the genetic data, connects to the NCBI BLAST database, searches for matches, and then returns the result from the database. Finally, the last line prints that result.
-
-You can try running "Blast.py" now if you'd like, but I'd recommend coming back to this after completing the next 3 exercises.
-
-
-
-
-**Make sure you don't attempt to transcribe the header lines!**
-
-#### SOLUTION
-```python
-file = open("test.fasta", "r")
-
-for line in file:
-  if line[0] != ">":
-    ans = ""
-    for char in line:
-      if char == "T":
-        ans += "U"
-      else:
-        ans += char
-    print ans
-  else:
-    print line
-```
-
-
-## Introduction
-
-This lesson is a continuation of our previous lesson, Intro to Python, . If you're having trouble following this tutorial, are new to Python, or just want a refresher, check that lesson out first.
-
-## Setup
-
-We're going to start by using a Python package called [Biopython](https://biopython.org/) to perform a few common bioinformatic tasks. Biopython is already installed on the cluster. You can prove this to yourself by typing the following on the command line:
-
-```shell
-pip list
-```
 
 ## Sequences
 
