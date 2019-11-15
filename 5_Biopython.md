@@ -6,53 +6,76 @@ Congratulations! After your hard work honing your Unix and Python skills, you've
 
 ## Warm Up
 
-Before you're allowed to work with real genetic data, you'll need to demonstrate that you know [command line](/2_LinuxTerminal.md) and [Python](/4_Python.md) basics. Complete the following tasks:
+Before you're allowed to work with real genetic data, you'll need to demonstrate that you know [command line](/2_LinuxTerminal.md) and [Python](/4_Python.md) basics. 
 
-1. Run the following command: `TODO`
-2. Execute the Python file and follow the instructions
-3. Use a command line tool called `wget` to download genetic data from [here](TODO)
-4. Determine the number of lines, number of bases, and the GC content
-
-*Confirm your progress with an instructor before moving forward.*
+Review these materials before moving forward. Additionally, create and enter a `week3` directory to contain all the work you'll do today
 
 ## The First Glimpse
 
 ### Access
 
-Great! You've now been granted access to the data you're tasked with identifying. Download it by running the following commands:
-```shell
-TODO
+Great! You've now been granted access to the data you're tasked with identifying. Copy it to your working directory:
+```
+cp ~/../smansuri/unidentified.unknown .
 ```
 
-As you've always done, explore the data to get a sense of what you're working with. There are no requirements of what you need to do.
+As you've always done, explore the data to get a sense of what you're working with. (*This is a good check to see if you're understanding what to do. What are some techniques we've used in the past?*).
 
 ### File Extenstion
 
 The file you downloaded is called `unidentified.unknown`. Having worked with genetic data files before, you know what type of file this is. Change the file extension from `.unknown` to the appropriate extension. *For example, if you thought this was a PDF file, you would rename the file to `unidentified.pdf`.*
 
-## RNA Simulation
+## Transcription Simulation
 
-It's clear that the genetic data in this file is DNA. 
+### Reverse Complement
 
-Create a file that takes in the DNA data (A/T/C/G) from "test.fasta" and prints out the file as RNA data (A/U/C/G). (Note: This is not how real transcription works. Just use this simple replacement as an example).
+It's clear that this file contains a DNA sequence. Your colleague reminds you that DNA is double stranded and runs anti-parallel. 
 
+This means that a sequence "ACGT" from 5' to 3' [what's this?](https://en.wikipedia.org/wiki/Directionality_(molecular_biology)) is paired up with another sequence "TGCA" from 3' to 5'. These two sequences are called **reverse complements** of one another. You can read more about DNA complementarity [here](https://en.wikipedia.org/wiki/Complementarity_(molecular_biology)).
+
+She recommends that you also extract the reverse complement of the unidentified sequence. Run the following on the command line:
+```
+cp ~/../smansuri/revcomp.py .
+```
+This will add an incomplete Python program called `revcomp.py`. Follow the instructions to 1) read in the file and 2) determine the reverse complement.
+
+Once you get the program running correctly, you'll see a success message and a file called `unidentified_reverse.fasta` created.
+
+### RNA Transcription
+
+RNA is created by taking the template strand (in our example, the reverse complement strand), and using an RNA polymerase to create a reverse complement of the reverse complement, but with Uracil (U) instead of Thymine (T). This means the RNA will have the same sequence as the original strand, but with U's instead of T's. For example:
+```
+Original:  ACTG
+Rev Comp:  TGAC
+RNA:       ACUG
+```
+
+Run the following on the command line:
+```
+cp ~/../smansuri/transcribe.py .
+```
+This will add an incomplete Python program called `transcribe.py`. Follow the instructions to transcribe the reverse complement to RNA (*Hint: This will be very similar to your revcomp.py*).
+
+Once you get the program running correctly, you'll see a success message and a file called `unidentified_rna.fasta` created.
 
 ## A Potential Breakthrough
 
-You compare this RNA sequence with some others in your lab's database. The transcribed RNA you submitted has a sequence that's fairly similar to --TODO--. 
+You compare this RNA sequence with some others in your lab's database. The transcribed RNA you submitted has a sequence that's fairly similar to one seen before in rats. 
 
-There are two markers that would suggest your unknown sample is, in fact, --:
-  1. The sequence "TODO" is often present.
-  2. The GC Content is between TODO.
+There are two markers that could suggest your unknown sample may, in fact, be related to the one seen in rats:
+  1. The sequence "ATGGAGCTGACTGTGGAGGCATG" is often present.
+  2. The GC Content is above 55%.
 
 Determine if this sequence appears in your sample, and see if the GC content is in the range you expect.
 
 ## BLAST
 
-Your colleague notices what you've been trying to do. She suggests you use an online tool called [NCBI BLAST](https://blast.ncbi.nlm.nih.gov/BlastAlign.cgi) to compare your sequence to a database of sequences online. Use the Nucleotide Blast tool to determine what this sample is.
+Your colleague notices what you've been trying to do. She suggests you use an online tool called [NCBI BLAST](https://blast.ncbi.nlm.nih.gov/BlastAlign.cgi) to compare your sequence to a database of sequences online. Click the link and use the Nucleotide Blast tool to copy-paste the **original DNA sequence** to determine what this sample is.
+
+Great! You've identified what organism this comes from. What exactly is this organism? Should you be worried?
 
 ## Let's Try That Again
 
 What you just did--exploring an unknown sequence--is one of the simplest and most common bioinformatic tasks. Ask yourself this: does everyone who wants to do this have to write their own algorithms, manually parse through sequences, and copy-paste into a web browser? 
 
-Of course not. Let's find out [how things are really done](6_BiopythonV2.md).
+Nope. Let's find out [how things are really done](6_BiopythonV2.md).
