@@ -29,32 +29,24 @@ You'll be using the same genetic data as before.
 
 Confirm that you renamed your file as *unidentified.fasta*. If you did not, review [FASTA format](https://www.genomatix.de/online_help/help/sequence_formats.html#FASTA)
 
-## Transcription
+## Transcription Simulation
 
-It's clear that the genetic data in this file is DNA. 
+### Reverse Complement
 
-Create a file that takes in the DNA data (A/T/C/G) from "test.fasta" and prints out the file as RNA data (A/U/C/G). (Note: This is not how real transcription works. Just use this simple replacement as an example).
+
+### RNA Transcription
+
 
 ## A Potential Breakthrough
 
-You compare this RNA sequence with some others in your lab's database. The transcribed RNA you submitted has a sequence that's fairly similar to --TODO--. 
-
-There are two markers that would suggest your unknown sample is, in fact, --:
-  1. The sequence "TODO" is often present.
-  2. The GC Content is between TODO.
-
-Determine if this sequence appears in your sample, and see if the GC content is in the range you expect.
 
 ## BLAST
 
-Your colleague notices what you've been trying to do. She suggests you use an online tool called [NCBI BLAST](https://blast.ncbi.nlm.nih.gov/BlastAlign.cgi) to compare your sequence to a database of sequences online. Use the Nucleotide Blast tool to determine what this sample is.
 
-## Let's Try That Again
+## Congratulations! You've completed Week 3 of the Bioinformatics Crash Course.
 
-What you just did--determining the source of an unknown sequence--is one of the simplest and most common bioinformatic tasks. Ask yourself this: does everyone who wants to do this have to write their own algorithms, manually parse through sequences, and copy-paste into a web browser? 
-
-Of course not. Let's find out [how things are really done](6_BiopythonV2.md).
-
+## Credits
+Exercises are adapted from [Rosalind](http://rosalind.info), the official [Biopython tutorial textbook](http://biopython.org/DIST/docs/tutorial/Tutorial.pdf), and a [course](http://disi.unitn.it/~teso/courses/sciprog/python_biopython_exercises.html) from the University of Trento.
 
 
 
@@ -218,7 +210,4 @@ print "Complement of strings: "
 print "Reverse complement of strings: "
 ```
 
-## Congratulations! You've completed Week 3 of the Bioinformatics Crash Course.
 
-## Credits
-Exercises are adapted from [Rosalind](http://rosalind.info), the official [Biopython tutorial textbook](http://biopython.org/DIST/docs/tutorial/Tutorial.pdf), and a [course](http://disi.unitn.it/~teso/courses/sciprog/python_biopython_exercises.html) from the University of Trento.
