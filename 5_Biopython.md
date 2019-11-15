@@ -27,34 +27,34 @@ The file you downloaded is called `unidentified.unknown`. Having worked with gen
 
 ## Transcription Simulation
 
-### Reverse Complement
+### Complement
 
 It's clear that this file contains a DNA sequence. Your colleague reminds you that DNA is double stranded and runs anti-parallel. 
 
-This means that a sequence "ACGT" from 5' to 3' ([what's this?](https://en.wikipedia.org/wiki/Directionality_(molecular_biology))) is paired up with another sequence "TGCA" from 3' to 5'. These two sequences are called **reverse complements** of one another. You can read more about DNA complementarity [here](https://en.wikipedia.org/wiki/Complementarity_(molecular_biology)).
+This means that a sequence "ACGT" from 5' to 3' ([what's this?](https://en.wikipedia.org/wiki/Directionality_(molecular_biology))) is paired up with another sequence "TGCA" from 3' to 5'. These two sequences are called **complements** of one another. You can read more about DNA complementarity [here](https://en.wikipedia.org/wiki/Complementarity_(molecular_biology)).
 
-She recommends that you also extract the reverse complement of the unidentified sequence. Run the following on the command line:
+She recommends that you also extract the complement of the unidentified sequence. Run the following on the command line:
 ```
-cp ~/../smansuri/revcomp.py .
+cp ~/../smansuri/comp.py .
 ```
-This will add an incomplete Python program called `revcomp.py`. Follow the instructions to 1) read in the file and 2) determine the reverse complement.
+This will add an incomplete Python program called `comp.py`. Follow the instructions to 1) read in the file and 2) determine the complement.
 
-Once you get the program running correctly, you'll see a success message and a file called `unidentified_reverse.fasta` created.
+Once you get the program running correctly, you'll see a success message and a file called `unidentified_complement.fasta` created.
 
 ### RNA Transcription
 
-RNA is created by taking the template strand (in our example, the reverse complement strand), and using an RNA polymerase to create a reverse complement of the reverse complement, but with Uracil (U) instead of Thymine (T). This means the RNA will have the same sequence as the original strand, but with U's instead of T's. For example:
+RNA is created by taking the template strand (in our example, the complement strand), and using an RNA polymerase to create a complement of the complement, but with Uracil (U) instead of Thymine (T). This means the RNA will have the same sequence as the original strand, but with U's instead of T's. For example:
 ```
-Original:  ACTG
-Rev Comp:  TGAC
-RNA:       ACUG
+Original:   ACTG
+Complement: TGAC
+RNA:        ACUG
 ```
 
 Run the following on the command line:
 ```
 cp ~/../smansuri/transcribe.py .
 ```
-This will add an incomplete Python program called `transcribe.py`. Follow the instructions to transcribe the reverse complement to RNA (*Hint: This will be very similar to your revcomp.py*).
+This will add an incomplete Python program called `transcribe.py`. Follow the instructions to transcribe the complement to RNA (*Hint: This will be very similar to your revcomp.py*).
 
 Once you get the program running correctly, you'll see a success message and a file called `unidentified_rna.fasta` created.
 
