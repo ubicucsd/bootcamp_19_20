@@ -39,11 +39,13 @@ Create a file that takes in the DNA data (A/T/C/G) from "test.fasta" and prints 
 
 ## A Potential Breakthrough
 
-The transcribed RNA you submitted has a sequence that's fairly similar to --TODO--. Specifically, there are two markers that would suggest your unknown sample is --:
+You compare this RNA sequence with some others in your lab's database. The transcribed RNA you submitted has a sequence that's fairly similar to --TODO--. 
+
+There are two markers that would suggest your unknown sample is, in fact, --:
   1. The sequence "TODO" is often present.
   2. The GC Content is between TODO.
 
-Determine if this sequence appears in your sample, and see if the GC content is in the expected range.
+Determine if this sequence appears in your sample, and see if the GC content is in the range you expect.
 
 ## BLAST
 
@@ -53,7 +55,7 @@ Your colleague notices what you've been trying to do. She suggests you use an on
 
 What you just did--exploring an unknown sequence--is one of the simplest and most common bioinformatic tasks. Ask yourself this: does everyone who wants to do this have to write their own algorithms, manually parse through sequences, and copy-paste into a web browser? 
 
-Of course not. Let's find out [how things are really done](TODO).
+Of course not. Let's find out [how things are really done](6_BiopythonV2.md).
 
 
 
