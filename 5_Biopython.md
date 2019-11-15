@@ -78,4 +78,4 @@ Great! You've identified what organism this comes from. What exactly is this org
 
 What you just did--exploring an unknown sequence--is one of the simplest and most common bioinformatic tasks. Ask yourself this: does everyone who wants to do this have to write their own algorithms, manually parse through sequences, and copy-paste into a web browser? 
 
-Nope. Let's find out [how things are really done](6_BiopythonV2.md).
+Nope. Let's find out how things are really done in the [second part of today's lesson](6_BiopythonV2.md).
