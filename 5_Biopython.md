@@ -54,7 +54,7 @@ Run the following on the command line:
 ```
 cp ~/../smansuri/transcribe.py .
 ```
-This will add an incomplete Python program called `transcribe.py`. Follow the instructions to transcribe the complement to RNA (*Hint: This will be very similar to your revcomp.py*).
+This will add an incomplete Python program called `transcribe.py`. Follow the instructions to transcribe the complement to RNA (*Hint: This will be very similar to your implementation in comp.py*).
 
 Once you get the program running correctly, you'll see a success message and a file called `unidentified_rna.fasta` created.
 
