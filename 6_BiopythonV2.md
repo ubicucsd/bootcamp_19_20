@@ -67,6 +67,8 @@ This program will provide you with feedback as you progress through the next few
 
 *Hint: You really don't want to look through this vast documentation. Can you figure out which specific sub-packages the `biopython.py` file uses, and only look for that documentation? Ask an instructor if you're stuck for more than 3 minutes.*
 
+*Hint 2: Every single task below can be completed in one line of code. Although you need not be this efficient, be wary of writing long methods. The whole point of Biopython is that you don't need to think about any of the logic; it's all done for you.*
+
 ## Transcription Simulation
 
 ### Reverse Complement
