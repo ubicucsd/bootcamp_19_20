@@ -37,7 +37,7 @@ She recommends that you also extract the complement of the unidentified sequence
 ```
 cp ~/../smansuri/comp.py .
 ```
-This will add an incomplete Python program called `comp.py`. Follow the instructions to 1) read in the file and 2) determine the complement.
+This will add an incomplete Python program called `comp.py`. Follow the instructions to determine the complement.
 
 Once you get the program running correctly, you'll see a success message and a file called `unidentified_complement.fasta` created.
 
@@ -57,6 +57,8 @@ cp ~/../smansuri/transcribe.py .
 This will add an incomplete Python program called `transcribe.py`. Follow the instructions to transcribe the complement to RNA (*Hint: This will be very similar to your implementation in comp.py*).
 
 Once you get the program running correctly, you'll see a success message and a file called `unidentified_rna.fasta` created.
+
+*Note: The template strand is read from 5' to 3', which is the orientation of our complement data. Therefore, you don't need to do any sort of reversal. You'll soon see another instance where you will need to reverse.*
 
 ## A Potential Breakthrough
 
