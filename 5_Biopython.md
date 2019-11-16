@@ -72,7 +72,7 @@ Determine if this sequence appears in your sample, and see if the GC content is 
 
 Your colleague notices what you've been trying to do. She suggests you use an online tool called [NCBI BLAST](https://blast.ncbi.nlm.nih.gov/BlastAlign.cgi) to compare your sequence to a database of sequences online. Click the link and use the Nucleotide Blast tool to copy-paste the **original DNA sequence** to determine what this sample is.
 
-Great! You've identified what organism this comes from. What exactly is this organism? Should you be worried?
+Great! You've identified what organism this comes from. What exactly is this organism? Is there anything particularly interesting about it?
 
 ## Let's Try That Again
 
