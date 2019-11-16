@@ -10,11 +10,11 @@ Before you're allowed to work with real genetic data, you'll need to familiarize
 
 For example, earlier you determined the GC content of your sequence by writing your own algorithm. Instead, it's a lot easier to find a Python package that already has a built-in GC counter, and just run it by doing something like `sequence.count_gc()`, for example.
 
-The Python package we'll be using for our bioinformatics purposes is called Biopython. This is already installed on our cluster. If it wasn't, you could install it by doing (DO NOT ACTUALLY DO THIS): `pip install --user biopython`.
+The Python package we'll be using for our bioinformatics purposes is called Biopython. This is already installed on our cluster. If it wasn't, you could install it by doing (DO NOT ACTUALLY DO THIS): `pip3 install --user biopython`.
 
 Instead, prove to yourself that Biopython is already on the cluster by doing:
 ```
-pip list
+pip3 list
 ```
 
 ## Warm Up (Biopython)
