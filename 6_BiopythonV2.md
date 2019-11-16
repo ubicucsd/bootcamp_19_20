@@ -25,7 +25,34 @@ Great, we have Biopython. Let's figure out what it does and how to use it.
 
 Much like the fundamental building block of genetics is DNA, the fundamental building block of Biopython (at least for what we're doing) is the Seq object. As we move forward in the course, we'll introduce other Biopython features.
 
+First, you'll need to import the Seq package (which is part of the Biopython library). This gives you access to use the Seq object in your file:
 
+```python
+ from Bio.Seq import Seq
+```
+
+Next, create a Seq object (think of that as a nucleotide sequence) and assign it to a variable:
+```python
+rna = Seq("AGUACACUGGUG")
+```
+
+Now, print out that variable:
+```python
+print(rna)
+```
+
+The output (while boring) is probably what you'd expect--the sequence you specified. But, as you know, you could have done the same thing with a simple string! What makes Seq's especially useful?
+
+### Biopython Methods
+
+The answer - methods! See, the Seq object knows what's inside is either DNA or RNA, so it has specific genetics-related methods you can easily use! For example, you can translate this RNA! Do:
+
+```python
+print(rna.translate())
+```
+Check out [this table](http://www.fao.org/3/y2775e/y2775e0e.htm) to see what amino acids this translated to.
+
+*Note: Methods belonging to the Seq type will all be executed in the format above: SeqObj.method(). All but one method you'll use today will be in this format. The other is a method outside the type, which usess Seq as a parameter: method(SeqObj).*
 
 ## The First Glimpse
 
