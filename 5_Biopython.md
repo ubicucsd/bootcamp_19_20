@@ -8,7 +8,7 @@ Congratulations! After your hard work honing your Unix and Python skills, you've
 
 Before you're allowed to work with real genetic data, you'll need be familiar with [command line](/2_LinuxTerminal.md) and [Python](/4_Python.md) basics. 
 
-Review these materials before moving forward. Additionally, create and enter a `week3` directory to contain all the work you'll do today
+Review these materials before moving forward, especially creating, editing, and writing Python files. Additionally, create and enter a `week3` directory to contain all the work you'll do today
 
 ## The First Glimpse
 
