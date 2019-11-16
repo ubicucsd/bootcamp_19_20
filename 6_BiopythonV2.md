@@ -34,19 +34,17 @@ You'll be using the same genetic data as before. This time, instead of having va
 cp ~/../smansuri/biopython.py .
 ```
 
-### File Extenstion
-
-Confirm that you renamed the initisl file as *unidentified.fasta*. If you did not, review [FASTA format](https://www.genomatix.de/online_help/help/sequence_formats.html#FASTA)
+This program will provide you with feedback as you progress through the next few steps. Run the program as you complete each step.
 
 ## Transcription Simulation
 
 ### Reverse Complement
 
-Before, you had to write the logic for the reverse complement yourself. Now, just use the Seq object's `reverse_complement()` method.
+Before, you had to write the logic for the complement yourself. Now, just use the Seq object's `complement()` method.
 
 ### RNA Transcription
 
-Similar to above, use the `transcribe()` method on the reverse complement. Voila, one line and you're done.
+Similar to above, use the `transcribe()` method on the complement. Voila, one line and you're done.
 
 ## A Potential Breakthrough
 
