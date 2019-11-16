@@ -1,5 +1,7 @@
 # Bioinformatics x Python
 
+### EC2: ec2-18-217-6-223.us-east-2.compute.amazonaws.com
+
 ## Welcome
 
 Congratulations! After your hard work honing your Unix and Python skills, you've been selected for a bioinformatic research project! Soon, you're going to be trusted with genetic data from an unknown source. Your goals will be to use bioinformatics to 1) analyze features of the data and 2) determine where this data came from.
