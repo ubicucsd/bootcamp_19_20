@@ -19,8 +19,18 @@ Additionally, you'll never need to download any software. Everything you need is
 ### Getting Help
 In the real world, you're often on your own when you're stuck and need help. Reading through Google searches, documentations, tutorials, and manuals is a real life skill. 
 
-However, we don't just want to throw you off the deep end. If you do get stuck on something and you can't figure it out, you can email Sabeel. Provide a specific description of 1) what you're trying to accomplish 2) what issue you're running into 3) what you've already tried to troubleshoot it.
+However, we don't just want to throw you off the deep end. If you do get stuck on something and you can't figure it out, you can draft and email and send it to both Sabeel and Mark. Provide a specific description of 1) what you're trying to accomplish 2) what issue you're running into 3) what you've already tried to troubleshoot it. We'll get back to you as soon as we can, but move on to a different problem in the meantime.
 
 ### Good luck, have fun!
 
-##
+## Problem 1
+
+## Problem 2
+
+## Problem 3
+
+## Problem 4
+
+## Problem 5
+
+## Congratulations! You've completed Week 4 AND Quarter 1 of the Bioinformatics Crash Course.
