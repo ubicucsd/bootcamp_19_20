@@ -3,7 +3,7 @@
 ## Welcome
 Welcome to Week 4 of the Crash Course! This will be our final session this quarter; good luck with finals, and we'll see you in Winter.
 
-This week's lesson is, in some ways, a "midterm" that covers the skills you've learned in Weeks 1-3. It is designed to be more representative of problems you'd be asked to solve in real world applications rather than a tutorial explaining how things are done. 
+This week's lesson is, in some ways, a "midterm" that covers the skills you've learned in Weeks 1-3. It is designed to be more representative of problems you'd be asked to solve in real world applications rather than a tutorial explaining how things are done. It should be challenging, but fairly short.
 
 ## Instructions
 ### Coverage
