@@ -28,7 +28,13 @@ However, we don't just want to throw you off the deep end. If you do get stuck o
 ## The Problem
 We've previously described how and why we sequence DNA. The raw output of these sequencing machines are [FASTQ](https://support.illumina.com/bulletins/2016/04/fastq-files-explained.html) files. Recall that each base that a FASTQ file contains is paired with a quality score that's encoded in [ASCII](http://www.asciitable.com/) (proportional to how confident the machine is that the base was identified correctly). We, of course, do not want to have our downstream analyses tainted by low-confidence sequences. 
 
-There are various techniques for cleaning up such raw data. Your goal here is to implement one possible method: We will only keep reads **if the average base quality is (strictly) greater than 68**.
+There are various techniques for cleaning up such raw data. Your goal here is to implement one possible method: We will only keep reads if:
+```
+1. No base in the read has a quality score (strictly) less than 50
+2. The average base quality is (strictly) greater than 68
+```
+
+Our goal is to output a count of the number of reads that we kept.
 
 As an example, imagine our FASTQ file contains only two sequences, each with three characters:
 ```
@@ -42,20 +48,22 @@ TGC
 BCD
 ```
 
-@SAMPLE1 has an average quality score of 69 (from the average ASCII of `DEF`). We will keep this sequence.
-@SAMPLE2 has an average quality score of 67 (from the average ASCII of `BCD`). We will not keep this sequence.
+@SAMPLE1 has an average quality score of 69 (from the average ASCII of `DEF`), and no character is under 50. We will keep this sequence.
+@SAMPLE2 has an average quality score of 67 (from the average ASCII of `BCD`), and no character is under 50. We will not keep this sequence.
 
-The output file, therefore, would contain four lines:
-```
-@SAMPLE1
-AGG
-+
-DEF
-```
+The output, therefore, would be 1:
 
 Make a copy of your input FASTQ file, available at `~/../smansuri/raw.fastq`. Have fun!
 
-## Checking Your Solution
-You'll be self-checking your work this week. If your output file has 3828 lines, you're done! Let us know you're done by sending Sabeel an email titled **[UBIC] Completed Week 4** containing the last line of your output file (i.e. line 3283).
+<details>
+  <summary>Just getting 0 as your count over and over? Click me!</summary>
+  
+  Newline characters have an ASCII value of 10.
+</details>
+
+## Submitting Your Solution
+First, a sanity check. Your answer should be in the low-900's. 
+
+If your answer matches these criteria, send Sabeel an email titled **[UBIC] Completed Week 4** containing your count.
 
 ## Congratulations! You've completed Week 4 AND Quarter 1 of the Bioinformatics Crash Course.
