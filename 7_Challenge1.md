@@ -53,7 +53,7 @@ AGG
 DEF
 ```
 
-Make a copy of your input FASTQ file, available at `~/../smansuri/raw.fastq`.
+Make a copy of your input FASTQ file, available at `~/../smansuri/raw.fastq`. Have fun!
 
 ## Checking Your Solution
 You'll be self-checking your work this week. If your output file has 3828 lines, you're done! Let us know you're done by sending Sabeel an email titled **[UBIC] Completed Week 4** containing the last line of your output file (i.e. line 3283).
