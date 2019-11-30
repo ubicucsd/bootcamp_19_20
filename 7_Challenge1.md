@@ -1,5 +1,7 @@
 # Challenge 1
 
+### EC2: ec2-13-58-73-19.us-east-2.compute.amazonaws.com
+
 ## Welcome
 Welcome to Week 4 of the Crash Course! This will be our final session this quarter; good luck with finals, and we'll see you in Winter.
 
