@@ -28,36 +28,34 @@ However, we don't just want to throw you off the deep end. If you do get stuck o
 ## The Problem
 We've previously described how and why we sequence DNA. The raw output of these sequencing machines are [FASTQ](https://support.illumina.com/bulletins/2016/04/fastq-files-explained.html) files. Recall that each base that a FASTQ file contains is paired with a quality score that's encoded in [ASCII](http://www.asciitable.com/) (proportional to how confident the machine is that the base was identified correctly). We, of course, do not want to have our downstream analyses tainted by low-confidence sequences. 
 
-There are various techniques for cleaning up such raw data. Your goal here is to implement one possible method: We will only keep reads if:
-```
-1. Every single base in the sequence has a quality score greater than 5
-2. The average base quality is greater than 20
-```
-and will create a new file with the output.
+There are various techniques for cleaning up such raw data. Your goal here is to implement one possible method: We will only keep reads **if the average base quality is (strictly) greater than 68**.
 
 As an example, imagine our FASTQ file contains only two sequences, each with three characters:
 ```
 @SAMPLE1
 AGG
 +
-CFH
+DEF
 @SAMPLE2
 TGC
 +
-JIJ
+BCD
 ```
 
-We would keep lines related to @SAMPLE1 but not @SAMPLE2, since @SAMPLE2 contains a base with a quality under 5. This base is the first T, which has 'J' as it's quality character, which is an ASCII value of _.
+@SAMPLE1 has an average quality score of 69 (from the average ASCII of `DEF`). We will keep this sequence.
+@SAMPLE2 has an average quality score of 67 (from the average ASCII of `BCD`). We will not keep this sequence.
 
 The output file, therefore, would contain four lines:
 ```
 @SAMPLE1
 AGG
 +
-CFH
+DEF
 ```
 
+Make a copy of your input FASTQ file, available at `~/../smansuri/raw.fastq`.
+
 ## Checking Your Solution
-You'll be self-checking your work this week. If your output file has _ lines, you're done!
+You'll be self-checking your work this week. If your output file has 3828 lines, you're done!
 
 ## Congratulations! You've completed Week 4 AND Quarter 1 of the Bioinformatics Crash Course.
