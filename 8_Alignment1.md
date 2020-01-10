@@ -16,7 +16,7 @@ Pairwise alignment is the alignment of one sequence to one other sequence. In or
 
 ### Global Alignment
 
-In this case, the word "global" just means that the **entire** first string is aligned as best as possible to the **entire** second string. 
+In this case, the word "global" just means that the **entire** first string is aligned as best as possible to the **entire** second string. This method works best for comparing two homologous sequences, like comparing the same gene between individuals or species. 
 
 Make a new Python file ```aligners.py``` and import some stuff:
 ```
@@ -43,11 +43,11 @@ What is that asteriks? In different languages an asteriks has different meanings
 
 ### What exactly is a good score? Why is one alignment better than another? 
 
-Glad you asked! If you look at the score printed out below each alignment, you will notice that the score is coincidentially identical to the number of nucleotides that match between the two aligned sequences. The way we determine the alignment with the optimal score is beyond the scope of what I plan to discuss, but it is good to know that alignments are mostly determined by the way a program decides on alignment scores. The alignment we tried gives gaps, insertions, and deletions a score of zero and matches a score of one. Other alignments may have more complex behaviors, including negative scores for insertions/deletions, custom scores based on which nucleotide is mismatched with which, and more. There are several modes of alignment available on BioPython, each with customizable scoring. Look [over here](http://biopython.org/DIST/docs/api/Bio.pairwise2-module.html) if you want to see the range of what BioPython has to offer.
+Glad you asked! If you look at the score printed out below each alignment, you will notice that the score is coincidentially identical to the number of nucleotides that match between the two aligned sequences. The alignment we tried gives gaps, insertions, and deletions a score of zero and matches a score of one. Other alignments may have more complex behaviors, including negative scores for insertions/deletions, custom scores based on which nucleotide is mismatched with which, and more. There are several modes of alignment available on BioPython, each with customizable scoring. Look [over here](http://biopython.org/DIST/docs/api/Bio.pairwise2-module.html) if you want to see the range of what BioPython has to offer.
 
 ### Local Alignment
 
-The word "local" means the best alignment between two *subsequences*. This method can be used when looking for a conserved gene between two otherwise very different organisms. Aligning the messy differences between two different species is not useful, but finding two subsequences (two genes) that the species have in common without aligning the whole sequences can be very useful. 
+The word "local" means the best alignment between two **subsequences**. This method can be used when looking for a conserved gene between two otherwise very different organisms. Aligning the messy differences between two different species is not useful, but finding two subsequences (two genes) that the species have in common without aligning the whole sequences can be very useful. 
 
 Open up ```aligners.py``` and create strings ```ATGCGGCCATTATAAGCGGTCTCT``` and ```GATTATAATT```. Now, let's compare how these strings align with globally vs locally. The point is best illustrated when gaps and mismatches are penalized, so indicate the scoring system of the alignment like this: 
 
@@ -60,4 +60,6 @@ Looking at the matching nucleotides in global and local alignments of these stri
 
 ## Multiple Sequence alignment 
 
-Multiple sequence alignment aligns multiple sequences, but its inner workings are bit complicated (my way of saying I do not know them well enough to teach them) so we are just going to look at them from a distance. This type of alignment is used on a large number of more or less related sequences in order to infer homology and build evolutionary trees. My multiple sequence aligner of choice is mafft, which we will be using in the challenge below. 
+Multiple sequence alignment aligns multiple sequences, but its inner workings are bit complicated (my way of saying I do not know them well enough to teach them) so we are just going to focus on their applications. This type of alignment is used on a large number of more or less related sequences in order to infer homology and build evolutionary trees. My multiple sequence aligner of choice is mafft, which can be called from inside python.
+
+
