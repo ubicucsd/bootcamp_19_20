@@ -2,7 +2,7 @@
 
 ## EC2: ec2-18-191-106-205.us-east-2.compute.amazonaws.com
 
-#### Skill: More python and some knowledge of alignment methodology
+#### Skill: More python + knowledge of alignment methodology
 
 Every bioinformatics tool needs to start somewhere, and beyond quality control the first step most tools require is to make sequences comparable by aligning them. Alignment basically just put regions that are similar to each other closer to each other, and inserts gaps (denoted by '-') where there may have been an insertion/deletion event. Identifying regions of similarity can help us identify structural, functional, or evolutionary relationships between sequences.  
 
