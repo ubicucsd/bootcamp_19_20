@@ -1,8 +1,14 @@
 # Alignment
 
+## EC2: ec2-18-191-106-205.us-east-2.compute.amazonaws.com
+
 #### Skill: More python and some knowledge of alignment methodology
 
-Every bioinformatics tool needs to start somewhere, and beyond quality control the first step most tools require is to make sequences comparable by aligning them. Once the sequences have been aligned, you can start looking at which nucleotides differ, locate deletions/insertions, and much more. Today we will look at the classic pairwise alignment tool available from bioPython.
+Every bioinformatics tool needs to start somewhere, and beyond quality control the first step most tools require is to make sequences comparable by aligning them. Alignment basically just put regions that are similar to each other closer to each other, and inserts gaps (denoted by '-') where there may have been an insertion/deletion event. Identifying regions of similarity can help us identify structural, functional, or evolutionary relationships between sequences.  
+
+There are probably hundreds of alignment methods specialized for different types of information (DNA vs amino acid), different uses (finding common domans vs comparing homologous genes), and different special cases (antibody sequences, viral sequences). If you are interested in learning details about what a few of the methods that exist and how they work (this is BENG 181 material): the most generic DNA alignment method is a pairwise dynamic programming method called [Smith Waterman](https://en.wikipedia.org/wiki/Smith%E2%80%93Waterman_algorithm), alignment of many sequence (multiple sequence alignment) is done by Fast Fourier Transforms (https://en.wikipedia.org/wiki/MAFFT), and alignment for accurate amino acid sequence homology is done by [hmm profile alignment](http://www.biology.wustl.edu/gcg/hmmanalysis.html), 
+
+This lesson will focus on hands on learning of three types of alignment: global, local, and multiple sequence alignments.
 
 ## Why does an alignment look like it does?
 
