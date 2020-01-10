@@ -1,10 +1,10 @@
 # Codon Alignment Challenge
 
-One thing biologists care a lot about is the way amino acids change through time. This is found by sequencing DNA at several timepoints, codon aligning various timepoints, and comparing timepoints to see which amino acids change at what time. Why don't we just convert to amino acids and align there? Because of issues involving reading frames and deletions that will become clear as you do the challenge. 
+One thing biologists care a lot about is the way amino acids change through time. This is found by sequencing DNA at several timepoints, codon aligning various timepoints, and comparing timepoints to see which amino acids change at what time. Why don't we just convert to amino acids and align there? Because different reading frames and deletions cause suboptimal translations into the amino acid realm, and therefore decrease the usefulness of the alignment. Plus, codon alignment can reveal synonymous vs nonsynonymous mutations. 
 
 If you want to see an visualization of this application of alignment,[head over here](https://flea.ki.murrell.group/view/P018/sequences/). The sequences shown here are from an HIV envelope. If you click on on amino acid index, you can see a graph showing how the amino acid in that position evolved over time. You can explore the site - I recommend the tree section because it is pretty. 
 
-I made a fake fasta of sequences that need to be codon aligned over at ```/srv/WI20/not_aligned.fasta```.
+I made a fake fasta of sequences that need to be codon aligned over at ```/srv/WI20/not_aligned.fasta```. Here is my step by step guide on making your own 
 
 ### 1. Align with mafft and replace initial gaps with N's
 
@@ -15,7 +15,7 @@ Sequencing starts at many different points, and we don't know ahead of time wher
 
 </details></br>
 
-  ⋅⋅**a.** Align the file with mafft. 
+  ⋅⋅**a.** Align the file with mafft. Syntax for this is provided in [lesson 8](https://github.com/ubicucsd/bootcamp_19_20/blob/master/8_Alignment1.md)
   
   <details>
   <summary>Can't figure out the correct syntax to call mafft? click here</summary>
