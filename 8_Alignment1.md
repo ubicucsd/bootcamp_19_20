@@ -6,19 +6,30 @@
 
 Every bioinformatics tool needs to start somewhere, and beyond quality control the first step most tools require is to make sequences comparable by aligning them. Alignment basically just put regions that are similar to each other closer to each other, and inserts gaps (denoted by '-') where there may have been an insertion/deletion event. Identifying regions of similarity can help us identify structural, functional, or evolutionary relationships between sequences.  
 
-There are probably hundreds of alignment methods specialized for different types of information (DNA vs amino acid), different uses (finding common domans vs comparing homologous genes), and different special cases (antibody sequences, viral sequences). If you are interested in learning details about how some existing methods work (this is BENG 181 material): the most generic DNA alignment method is a pairwise dynamic programming method called [Smith Waterman](https://en.wikipedia.org/wiki/Smith%E2%80%93Waterman_algorithm), alignment of many sequences (multiple sequence alignment) can be done by [Fast Fourier Transforms](https://en.wikipedia.org/wiki/MAFFT), and alignment for accurate amino acid sequence homology is done by [hmm profile alignment](http://www.biology.wustl.edu/gcg/hmmanalysis.html).
+There are probably hundreds of alignment methods specialized for different types of information (DNA vs amino acid), different uses (finding common domans vs comparing homologous genes), and different special cases (antibody sequences, viral sequences). If you are interested in learning details about how some existing methods work (this is BENG 181 material): the most generic DNA alignment method is a pairwise dynamic programming method called [Smith-Waterman](https://en.wikipedia.org/wiki/Smith%E2%80%93Waterman_algorithm), alignment of many sequences (multiple sequence alignment) can be done by [Fast Fourier Transforms](https://en.wikipedia.org/wiki/MAFFT), and alignment for accurate amino acid sequence homology is done by [hmm profile alignment](http://www.biology.wustl.edu/gcg/hmmanalysis.html).
 
 **This lesson will focus on hands on learning of three types of alignment: global, local, and multiple sequence alignments.**
 
-## Why does an alignment look like it does?
+## Pairwise Alignemnt
 
-In order to see why alignments are useful on a larger scale, let us start by looking at them from a smaller scale. 
+Pairwise alignment is the alignment of one sequence to one other sequence. In order to look in detail at the usefulness of different types of alignments, we will start by looking at pairwise alignment methods implemented with the [Smith-Waterman](https://en.wikipedia.org/wiki/Smith%E2%80%93Waterman_algorithm) method.
 
 ### Global Alignment
 
-In this case, the word "global" just means that the entire first string is aligned as best as possible to the entire second string. 
+In this case, the word "global" just means that the **entire** first string is aligned as best as possible to the **entire** second string. 
 
-First, make a file called ```aligners.py``` and import the ```pairwise2``` module from the BioPython library and the ```format_alignment``` method from the ```pairwise2``` module. **HINT: look at part 4 to find the correct import syntax**
+Make a new Python file ```aligners.py``` and import some stuff:
+```
+# Import pairwise2 module
+from Bio import pairwise2
+
+# Import seq objects
+from Bio.Seq import Seq
+
+# Import method for formatting alignments
+from Bio.pairwise2 import format_alignment
+
+```
 
 Now, define two small strings containing DNA sequences. I recommend using ```TGCCTTAG``` and ```TGCTTGC``` for an easy to look at example. Call the default pairwise alignment method, called 
 
