@@ -83,6 +83,12 @@ We need to backtranslate from amino acids into codons by inserting the gaps from
 
 The answers for the code itself can be found at ```/srv/WI20/codon_align.py```
 
+At the end of step 2, your alignment should look like ```/srv/WI20/aligned_nucs.fasta```
+
+At the end of step 4, your amino acid alignment should look like ```/srv/WI20/aligned_aas.fasta```
+
+At the end of step 5, your alignment should look like ```/srv/WI20/codon_aligned_nucs.fasta```
+
 The answers for each q separately are currently being made. Once I separate them, I will put them in ```/srv/WI20```
 
 
