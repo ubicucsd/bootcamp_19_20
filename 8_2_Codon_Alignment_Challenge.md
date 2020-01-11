@@ -28,7 +28,7 @@ from Bio.Alphabet import generic_dna
   
 Due to DNA fragmentation, sequencing starts at many different points, and we don't know ahead of time where the points are. If we don't identify where one sequence starts relative to another, we cannot begin comparing them. Why the N's? That's because the biological meaning of N's is different than that of gaps. Gaps in an alignment indicate deletions or insertions from one sequence to another, we predict that something was removed or added. In the case of different starting points, we know that *something* is supposed to be there, since we have information from other sequences. Thus it is not an insertion or deletion, but unkown nucleotides. We represent this with N's. 
 
-**a.** Align the file with mafft. Syntax for this is provided in [lesson 8](https://github.com/ubicucsd/bootcamp_19_20/blob/master/8_Alignment1.md)
+**a.** Align the file with mafft. Syntax for this is provided in [lesson 8](https://github.com/ubicucsd/bootcamp_19_20/blob/master/8_1_Alignment.md)
 
 **b.** Go through each of the sequences in the mafft aligned file
 
