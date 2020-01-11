@@ -44,8 +44,9 @@ What is a modulus? it's this ```%``` symbol. In math, this symbol will find the 
 
 How? Google translating DNA with BioPython.
 
-## **4.** Mafft align the amino acid sequences from step 4. It's the same syntax as step 1, just put your animo acids in a file. 
+## **4.** Mafft align the amino acid sequences
 
+It's the same syntax as step 1, just put your animo acids in a file. 
 
 ## **5.** Backtranslate to codons
 
