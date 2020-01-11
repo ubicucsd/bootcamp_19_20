@@ -6,7 +6,7 @@
 
 Every bioinformatics tool needs to start somewhere, and beyond quality control the first step most tools require is to make sequences comparable by aligning them. Alignment basically just put regions that are similar to each other closer to each other, and inserts gaps (denoted by '-') where there may have been an insertion/deletion event. Identifying regions of similarity can help us identify structural, functional, or evolutionary relationships between sequences.  
 
-There are probably hundreds of alignment methods specialized for different types of information (DNA vs amino acid), different uses (finding common domans vs comparing homologous genes), and different special cases (antibody sequences, viral sequences). If you are interested in learning details about how some existing methods work (this is BENG 181 material): the most generic DNA alignment method is a pairwise dynamic programming method called [Smith-Waterman](https://en.wikipedia.org/wiki/Smith%E2%80%93Waterman_algorithm), alignment of many sequences (multiple sequence alignment) can be done by [Fast Fourier Transforms](https://en.wikipedia.org/wiki/MAFFT), and alignment for accurate amino acid sequence homology is done by [hmm profile alignment](http://www.biology.wustl.edu/gcg/hmmanalysis.html).
+There are hundreds of alignment methods for different types of information (DNA vs amino acid), different uses (finding common domans vs comparing homologous genes), and different special cases (antibody sequences, viral sequences). If you are interested in learning details about how some existing methods work (this is BENG 181 material): the most generic DNA alignment method is a pairwise dynamic programming method called [Smith-Waterman](https://en.wikipedia.org/wiki/Smith%E2%80%93Waterman_algorithm), alignment of many sequences (multiple sequence alignment) can be done by [Fast Fourier Transforms](https://en.wikipedia.org/wiki/MAFFT), and alignment for accurate amino acid sequence homology is done by [hmm profile alignment](http://www.biology.wustl.edu/gcg/hmmanalysis.html).
 
 **This lesson will focus on hands on learning of three types of alignment: global, local, and multiple sequence alignments.**
 
@@ -16,7 +16,7 @@ Pairwise alignment is the alignment of one sequence to one other sequence. In or
 
 ### Global Alignment
 
-In this case, the word "global" just means that the **entire** first string is aligned as best as possible to the **entire** second string. This method works best for comparing two homologous sequences, like comparing the same gene between individuals or species. 
+In this case, the word "global" just means that the **entire** first string is aligned as best as possible to the **entire** second string. Used to compare two homologous sequences, like comparing the same gene between individuals or species. 
 
 Make a new Python file ```aligners.py``` and import some stuff:
 ```
@@ -31,13 +31,17 @@ from Bio.pairwise2 import format_alignment
 
 ```
 
-Now, define two small strings containing DNA sequences. I recommend using ```TGCCTTAG``` and ```TGCTTGC``` for an easy to look at example. Call the default pairwise alignment method, called 
+Define strings ```TGCCTTAG``` and ```TGCTTGC``` and using global alignment on them:
 
-```pairwise2.align.globalxx()``` 
+```
+pairwise2.align.globalxx()
+``` 
 
-on those two strings. The alignment method returns a list of the most high scoring(good) alignments. You can print those out by iterating through the alignments with a for-each loop and print them out one by one. In order to make the alignments look a little nicer, you can put them through a formatting method before printing:
+The alignment method returns a list of the most high scoring(good) alignments. You can print those out by iterating through the alignments with a for-each loop and print them out one by one. Use this syntax to make them look better during printing:
 
-```print(format_alignment(*alignment_name))```
+```
+print(format_alignment(*alignment_name))
+```
 
 What is that asteriks? In different languages an asteriks has different meanings, but in Python it denotes a variable quantity of arguments. In other words, methods that want this asteriks are capable of accepting either one, maybe two, or maybe more arguments(inputs). 
 
