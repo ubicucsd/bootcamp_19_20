@@ -71,6 +71,6 @@ subprocess.call(["mafft", "--out", "nuc_aligned.fasta", in_file])
 Now that you have an idea of what alignment is about, get more hands on and discover more practical applications with our challenges:
 
 [Challenge 1: Codon Alignment](https://github.com/ubicucsd/bootcamp_19_20/edit/master/8_Alignment.md)
-This challenge describes a method of alignment that can be used to track the differences between sequences on the codon level. 
+This challenge describes a method of alignment that can be used to track the differences between sequences on the codon level. The goal is achieved with mutliple sequence and some basic sequence manipulation tricks. 
 
 
