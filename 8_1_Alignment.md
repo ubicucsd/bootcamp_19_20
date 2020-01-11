@@ -69,6 +69,8 @@ Multiple sequence alignment aligns multiple sequences, but its inner workings ar
 Grab ```/srv/WI20/D_db.fasta``` and ```/srv/WI20/J_db.fasta``` and align them with the default settings on mafft:  
  
 ```
+import subprocess
+
 in_file = "D_db.fasta"
 subprocess.call(["mafft", "--out", "aligned.fasta", in_file])
 ```
