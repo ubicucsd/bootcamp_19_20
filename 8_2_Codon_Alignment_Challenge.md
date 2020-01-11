@@ -30,7 +30,7 @@ Due to DNA fragmentation, sequencing starts at many different points, and we don
 
 **a.** Align the file with mafft. Syntax for this is provided in [lesson 8](https://github.com/ubicucsd/bootcamp_19_20/blob/master/8_Alignment1.md)
 
-**b.** Go through each of the sequences in the mafft aligned file, see part 4 for how to do this
+**b.** Go through each of the sequences in the mafft aligned file
   
 **c.** Count the number of initial gaps on each sequence
   
