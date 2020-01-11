@@ -63,9 +63,14 @@ Looking at the matching nucleotides in global and local alignments of these stri
 Multiple sequence alignment aligns multiple sequences, but its inner workings are bit complicated (my way of saying I do not know them well enough to teach them) so we are just going to focus on their applications. This type of alignment is used on a large number of more or less related sequences in order to infer homology and build evolutionary trees. My multiple sequence aligner of choice is mafft, which can be called from inside python.
 
 Grab an unaligned file of viral envelope sequences from  
-
+ 
+```python
+subprocess.call(["mafft", "--out", "nuc_aligned.fasta", in_file])
+````
 
 Now that you have an idea of what alignment is about, get more hands on and discover more practical applications with our challenges:
+
 [Challenge 1: Codon Alignment](https://github.com/ubicucsd/bootcamp_19_20/edit/master/8_Alignment.md)
+This challenge describes a method of alignment that can be used to track the differences between sequences on the codon level. 
 
 
