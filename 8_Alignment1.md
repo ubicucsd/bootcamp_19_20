@@ -4,7 +4,7 @@
 
 #### Skill: More python + knowledge of alignment methodology
 
-Every bioinformatics tool needs to start somewhere, and beyond quality control the first step most tools require is to make sequences comparable by aligning them. Alignment basically just put regions that are similar to each other closer to each other, and inserts gaps (denoted by '-') where there may have been an insertion/deletion event. Identifying regions of similarity can help us identify structural, functional, or evolutionary relationships between sequences.  
+Alignment basically just put regions that are similar to each other closer to each other, and inserts gaps (denoted by '-') where there may have been an insertion/deletion event. Identifying regions of similarity can help us identify structural, functional, or evolutionary relationships between sequences.  
 
 There are hundreds of alignment methods for different types of information (DNA vs amino acid), different uses (finding common domans vs comparing homologous genes), and different special cases (antibody sequences, viral sequences). If you are interested in learning details about how some existing methods work (this is BENG 181 material): the most generic DNA alignment method is a pairwise dynamic programming method called [Smith-Waterman](https://en.wikipedia.org/wiki/Smith%E2%80%93Waterman_algorithm), alignment of many sequences (multiple sequence alignment) can be done by [Fast Fourier Transforms](https://en.wikipedia.org/wiki/MAFFT), and alignment for accurate amino acid sequence homology is done by [hmm profile alignment](http://www.biology.wustl.edu/gcg/hmmanalysis.html).
 
