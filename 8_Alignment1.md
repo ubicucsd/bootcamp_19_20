@@ -66,7 +66,7 @@ Looking at the matching nucleotides in global and local alignments of these stri
 
 Multiple sequence alignment aligns multiple sequences, but its inner workings are bit complicated (my way of saying I do not know them well enough to teach them) so we are just going to focus on their applications. This type of alignment is used on a large number of more or less related sequences in order to infer homology and build evolutionary trees. My multiple sequence aligner of choice is mafft, which can be called from inside python.
 
-Grab ```/srv/WI20/D_db.fasta``` and ```/srv/WI20/J_db.fasta``` and align them with the default settions on mafft:  
+Grab ```/srv/WI20/D_db.fasta``` and ```/srv/WI20/J_db.fasta``` and align them with the default settings on mafft:  
  
 ```
 in_file = "D_db.fasta"
