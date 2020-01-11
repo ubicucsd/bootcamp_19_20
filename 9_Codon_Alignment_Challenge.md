@@ -6,6 +6,22 @@ For a visualization of this type of alignment, [head over here](https://flea.ki.
 
 I made a fake fasta of sequences that need to be codon aligned over at ```/srv/WI20/not_aligned.fasta```. Here is my step by step guide on making your own codon aligner to make sure those sequences are nice and neat. 
 
+## 0. Get the imports
+
+```
+#to call mafft
+import subprocess
+
+#to use the Seq type
+from Bio import Seq
+
+#to read/write fasta
+from Bio import SeqIO
+
+#to translate
+from Bio.Alphabet import generic_dna
+```
+
 ## 1. Align with mafft and replace initial gaps with N's
 
 ### Why we do this?
