@@ -41,7 +41,9 @@ for seq_record in SeqIO.parse("nuc_aligned.fasta", "fasta"):
 **d.** Degap each sequence and place it into a Seq object
 
 The syntax for this step is whack, so let me give it to you: 
+```
 sequence=Seq.Seq(str(seq_record.seq).replace("-", ""))
+```
 
 **d.** Prepend each sequence with n's. The number of n's should be equal to the number of initial gaps that sequence had.
 
