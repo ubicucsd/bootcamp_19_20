@@ -4,7 +4,7 @@ One thing biologists care a lot about is the way amino acids change through time
 
 If you want to see an visualization of this application of alignment, [head over here](https://flea.ki.murrell.group/view/P018/sequences/). The sequences shown here are from an HIV envelope. If you click on on amino acid index, you can see a graph showing how the amino acid in that position evolved over time. You can explore the site - I recommend the tree section because it is pretty. 
 
-I made a fake fasta of sequences that need to be codon aligned over at ```/srv/WI20/not_aligned.fasta```. Here is my step by step guide on making your own 
+I made a fake fasta of sequences that need to be codon aligned over at ```/srv/WI20/not_aligned.fasta```. Here is my step by step guide on making your own codon aligner to make sure those sequences are nice and neat. 
 
 ## 1. Align with mafft and replace initial gaps with N's
 
