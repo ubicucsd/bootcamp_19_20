@@ -89,6 +89,3 @@ At the end of step 4, your amino acid alignment should look like ```/srv/WI20/al
 
 At the end of step 5, your alignment should look like ```/srv/WI20/codon_aligned_nucs.fasta```
 
-The answers for each q separately are currently being made. Once I separate them, I will put them in ```/srv/WI20```
-
-
