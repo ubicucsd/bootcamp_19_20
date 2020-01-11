@@ -75,9 +75,9 @@ subprocess.call(["mafft", "--out", "aligned.fasta", in_file])
 
 D_db.fasta and J_db.fasta are the databases of known human diversity and joining genes, respectively. These genes are building blocks of the heavy chain on an antibody. We can see that the J's align pretty neatly, with some deletions, while the D alignment is a mess - many mismatches and gaps. This clearly indicates that J genes are much more highly conserved than D genes, which you probably guessed from their names. Find answers to your questions about heavy chains [over here](https://en.wikipedia.org/wiki/V(D)J_recombination)
 
-Now that you have an idea of what alignment is about, get more hands on and discover more practical applications with our challenges:
+Now that we are familiar with what alignment has to offer, let us get hands on with a specific implementation: 
 
-[Challenge 1: Codon Alignment](https://github.com/ubicucsd/bootcamp_19_20/edit/master/8_Alignment.md)
+[Challenge: Codon Alignment](https://github.com/ubicucsd/bootcamp_19_20/edit/master/8_Alignment.md)
 This challenge describes a method of alignment that can be used to track the differences between sequences on the codon level. The goal is achieved with mutliple sequence and some basic sequence manipulation tricks. 
 
 
