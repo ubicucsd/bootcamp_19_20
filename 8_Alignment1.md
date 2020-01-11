@@ -62,11 +62,14 @@ Looking at the matching nucleotides in global and local alignments of these stri
 
 Multiple sequence alignment aligns multiple sequences, but its inner workings are bit complicated (my way of saying I do not know them well enough to teach them) so we are just going to focus on their applications. This type of alignment is used on a large number of more or less related sequences in order to infer homology and build evolutionary trees. My multiple sequence aligner of choice is mafft, which can be called from inside python.
 
-Grab an unaligned file of viral envelope sequences from  
+Grab ```/srv/D_db.fasta``` and ```/srv/J_db.fasta``` and align them with the default settions on mafft:  
  
-```python
-subprocess.call(["mafft", "--out", "nuc_aligned.fasta", in_file])
-````
+```
+in_file = "D_db.fasta"
+subprocess.call(["mafft", "--out", "aligned.fasta", in_file])
+```
+
+D_db.fasta and J_db.fasta are the databases of known human diversity and joining genes, respectively. These genes are building blocks of the heavy chain on an antibody. We can see that the J's align pretty neatly, with some deletions, while the D alignment is a mess - many mismatches and gaps. This clearly indicates that J genes are much more highly conserved than D genes, which you probably guessed from their names. Find answers to your questions about heavy chains [over here](https://en.wikipedia.org/wiki/V(D)J_recombination)
 
 Now that you have an idea of what alignment is about, get more hands on and discover more practical applications with our challenges:
 
