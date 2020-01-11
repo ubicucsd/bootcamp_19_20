@@ -77,3 +77,12 @@ We need to backtranslate from amino acids into codons by inserting the gaps from
 **a.** Go through each amino acid in the aligned amino acid array
 
 **b.** If it's a regular amino acid, go ahead and take next three nucelotides from the degapped nucleotide array (the one with the n's). If it's a gap, think about how many gaps that corresponds to in nuceotide space (hint: it's three) and insert those gaps. 
+
+
+## ANSWER KEY
+
+The answers for the code itself can be found at ```/srv/WI20/codon_align.py```
+
+The answers for each q separately are currently being made. Once I separate them, I will put them in ```/srv/WI20```
+
+
