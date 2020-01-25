@@ -90,7 +90,7 @@ Don't forget to replace k with the number of blobs you made above. Do the same f
   
 ### 2. Agglomerative Hierarchical 
 
-#### Steps:
+#### Description:
 
 &nbsp;&nbsp; I. Start with every point being its very own cluster center. 
    
@@ -120,6 +120,8 @@ Don't forget to replace k with the number of blobs you made above. Do the same f
 ### 3. Soft Clustering
 
 #### Description:
+
+This is essentially the same thing as k-means, but points cannot be hard assigned to a cluster. Instead, each point has a probability of being in each cluster, and points with higher probabilities influence the center of that cluster more. 
   
   I. Select K centers randomly (or slightly less randomly, like [farthest first traversal](https://en.wikipedia.org/wiki/Farthest-first_traversal). 
   
