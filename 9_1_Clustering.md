@@ -137,3 +137,7 @@ This is essentially the same thing as k-means, but points cannot be hard assigne
   ```
   
   Use these new clusters in our ```cluster_plots()```
+  
+## Challenge
+
+Head [over here](https://github.com/ubicucsd/bootcamp_19_20/blob/master/9_2_Dirichlet_Challenge.md) to complete our clustering challenge!
