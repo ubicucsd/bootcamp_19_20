@@ -1,4 +1,4 @@
-# A little bit on Clustering
+# Clustering
 
 ## EC2: ec2-3-135-188-28.us-east-2.compute.amazonaws.com
 
