@@ -4,9 +4,9 @@
 
 #### Skills: Familiarity with sklearn package and an understanding of why clustering is useful in bioinformatics
 
-#### Preliminary note:
+#### Syntax note:
 
-Note that in Python syntax, you will have to use the dot (period) to indicate when you are going from a general to specific scope. For example, there is a package called numpy, with a module called random, with a function called seed. The seed function is called by typing out ```np.random.seed()```, telling python where exactly it needs to look. 
+Note that in Python syntax, you will have to use a dot to specify where you want to get a function from. For example, there is a package called numpy, with a module called random, with a function called seed. The seed function is called by typing out ```np.random.seed()```, telling python where exactly it needs to look. 
 
 **WE ARE USING PYTHON3, NOT PYTHON**
 
@@ -22,7 +22,7 @@ Note that in Python syntax, you will have to use the dot (period) to indicate wh
 
 **How is DNA a point?** One common way we translate DNA strings to points is by making a string of DNA into a kmer vector. A kmer is a string of length k, and there are 4^k possible kmers in any DNA strand. Usually we think of kmers as ordered lexicographically like this: AAA, AAC, AAG, AAT, ACA, ACC, ACG, ACT, AGA and so on. One way to represent a DNA strand is to create an array of zeros of length 4^k and increment by one for each time that kmer appears in the DNA strand. 
 
-*Problem:* Find the kmer vector of "AGTTTCAT" for k=2. 
+*Problem:* Find the kmer vector of "AG" (k=2). 
 
 ### Bioinformatics Applications of Clustering: 
 
@@ -36,31 +36,29 @@ Note that in Python syntax, you will have to use the dot (period) to indicate wh
 
 In order to demonstrate the differences between different clustering methods, we need datasets that cluster differently depending on technique. 
 
-Copy the file 
+Copy the starter file into your directory:
 
 ```/home/ubuntu/clustering_lesson/clust.py``` 
 
-into your own directory. 
+This file contains a plotting function - don't touch it! We will be creating stuff for that plotting function to plot in a minute, so write your code below that function. 
 
 Start by creating some blobs using numpy's random normal generator. First, create a seed for the random number generator with 
 
 ```np.random.seed()```
 
-Then, use the following code as a guide for making a blob: 
+Make a few blobs of points (probably two) with centers between 0 and 20 and varied stdevs (keeping the array dimensions the same). Example syntax:
 ```clust1 = np.random.normal(5, 2, (1000,2))```
-This will make a blob centered around 5 with a stdev of 2 in the form of a 1000\*2 array.
 
-Make a few blobs (and save them in variables `clust1`, `clust2`, etc.) with centers between 0 and 20 and varied stdevs (keeping the array dimensions the same). 
+Put the point blobs into one structure so that we can cluster them all at once with 
 
-Bring the blobs into one structre:
+```dataset1 = np.concatenate()``` 
 
-```set1=np.concatenate()``` 
+We will be comparing how our point blobs cluster to the way that circles of datapoints cluster. Create two concentric circles as the second dataset. 
+```dataset2 = datasets.make_circles(n_samples=1000, factor=.5, noise=.05)[0]```
 
-The figure we can use to contrast the blobs is some circular point layouts. Make two concentric circles with ```set2=datasets.make_circles(n_samples=1000, factor=.5, noise=.05)[0]```
+If you want to see what your datasets look like, use the ```cluster_plots``` function
 
-Make a pretty picture of the datasets:
-```cluster_plots()``` 
-**Note:** this will save your plots to a pdf file in your current directory, the name of which can be changed. You'll have to scp the file over to your computer to view it. 
+**Note:** ```cluster_plots``` will save your plots to a pdf file in your current directory, the name of which can be changed. You'll have to scp the file over to your computer to view it. 
   
 ```
 scp username@ec2-3-135-188-28.us-east-2.compute.amazonaws.com:/home/username/path /localpath/
@@ -82,10 +80,10 @@ scp username@ec2-3-135-188-28.us-east-2.compute.amazonaws.com:/home/username/pat
   
 #### Code:
 
-Don't forget to replace k with the number of blobs you made above. Do the same for set2, but now set k=2. Since there are two circles in the dataset, it would be nice if the computer could cluster the circles into 2 partitions. 
+We will be using the KMeans algorithm from sklearn's cluster package to dataset1 and dataset2. Remember that k is the number of clusters the KMeans algorithm will assign points to, so give Kmeans the appropriate k. The points returned from the KMeans function will be separated into clusters, making them easy for the cluster_plots function to distinguish and color accordingly. 
   ```
-  kmeans_dataset1 = cluster.KMeans(n_clusters=k).fit_predict(set1)
-  cluster_plots(set1, set2, kmeans_dataset1, kmeans_dataset2)
+  kmeans_dataset1 = cluster.KMeans(n_clusters=k).fit_predict(dataset1)
+  cluster_plots(dataset1, dataset2, kmeans_dataset1, kmeans_dataset2)
   ```
   
 ### 2. Agglomerative Hierarchical 
@@ -107,8 +105,8 @@ Don't forget to replace k with the number of blobs you made above. Do the same f
    Unfortunately, this still does not solve our circlular cluster issue. For that, we can ask the sklearn package to build a graph out of our circles which restricts the amount of nearest neighbors a point can cluster with. 
    
    ```
-   #this line is missing a parameter - how would you set the number of nearest neighbors to 6?
-   connect = kneighbors_graph(dataset2, include_self=False)
+   #this line limits the number of nearest neighbors to 6
+   connect = kneighbors_graph(dataset2, include_self=False, n_neighbors = 6)
    
    #in this line, you need to set linkage to complete, number of clusters to 2, and set connectivity equal to the graph 
    #on the previous line
@@ -133,7 +131,7 @@ This is essentially the same thing as k-means, but points cannot be hard assigne
   Let's go ahead and see what will happen with our blobs and circles under this clustering algorithm:
   
   ```
-  em_set1=mixture.GaussianMixture().fit_predict
+  em_set1=mixture.GaussianMixture().fit_predict()
   ```
   
   Use these new clusters in our ```cluster_plots()```
